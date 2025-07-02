@@ -10,18 +10,12 @@ using System.Windows.Forms;
 
 namespace FitnessTracker
 {
-    public partial class MainForm : Form
+    public partial class RegisterForm : Form
     {
-        public MainForm()
+        public RegisterForm()
         {
             InitializeComponent();
         }
 
-        private void registerFormBtn_Click(object sender, EventArgs e)
-        {
-            RegisterForm registerForm = new RegisterForm();
-
-            registerForm.Show();
-        }
     }
 }
