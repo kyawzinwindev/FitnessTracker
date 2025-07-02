@@ -30,22 +30,22 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFullname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioMale = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtWeight = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.registerSummitBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -66,12 +66,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Username";
             // 
-            // textBox2
+            // txtFullname
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(283, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtFullname.Location = new System.Drawing.Point(56, 50);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(283, 20);
+            this.txtFullname.TabIndex = 3;
             // 
             // label3
             // 
@@ -82,19 +82,19 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
             // 
-            // textBox3
+            // txtUsername
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(283, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtUsername.Location = new System.Drawing.Point(56, 119);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(283, 20);
+            this.txtUsername.TabIndex = 5;
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(283, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtPassword.Location = new System.Drawing.Point(56, 195);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(283, 20);
+            this.txtPassword.TabIndex = 6;
             // 
             // label4
             // 
@@ -105,19 +105,19 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Phone";
             // 
-            // textBox4
+            // txtPhone
             // 
-            this.textBox4.Location = new System.Drawing.Point(56, 267);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(283, 20);
-            this.textBox4.TabIndex = 8;
+            this.txtPhone.Location = new System.Drawing.Point(56, 267);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(283, 20);
+            this.txtPhone.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // dateOfBirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(424, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateOfBirth.Location = new System.Drawing.Point(424, 47);
+            this.dateOfBirth.Name = "dateOfBirth";
+            this.dateOfBirth.Size = new System.Drawing.Size(271, 20);
+            this.dateOfBirth.TabIndex = 9;
             // 
             // label5
             // 
@@ -128,16 +128,16 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Date of Birth";
             // 
-            // radioButton1
+            // radioMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(424, 119);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 11;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioMale.AutoSize = true;
+            this.radioMale.Location = new System.Drawing.Point(424, 119);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(48, 17);
+            this.radioMale.TabIndex = 11;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Male";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -148,16 +148,16 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Gender";
             // 
-            // radioButton2
+            // radioFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(490, 119);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.Location = new System.Drawing.Point(490, 119);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(59, 17);
+            this.radioFemale.TabIndex = 13;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Female";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -168,12 +168,12 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Weight";
             // 
-            // textBox5
+            // txtWeight
             // 
-            this.textBox5.Location = new System.Drawing.Point(424, 195);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(283, 20);
-            this.textBox5.TabIndex = 15;
+            this.txtWeight.Location = new System.Drawing.Point(424, 195);
+            this.txtWeight.Name = "txtWeight";
+            this.txtWeight.Size = new System.Drawing.Size(283, 20);
+            this.txtWeight.TabIndex = 15;
             // 
             // label8
             // 
@@ -184,42 +184,42 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Height";
             // 
-            // textBox6
+            // txtHeight
             // 
-            this.textBox6.Location = new System.Drawing.Point(424, 267);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(283, 20);
-            this.textBox6.TabIndex = 17;
+            this.txtHeight.Location = new System.Drawing.Point(424, 267);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(283, 20);
+            this.txtHeight.TabIndex = 17;
             // 
-            // button1
+            // registerSummitBtn
             // 
-            this.button1.Location = new System.Drawing.Point(347, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Register";
+            this.registerSummitBtn.Location = new System.Drawing.Point(341, 320);
+            this.registerSummitBtn.Name = "registerSummitBtn";
+            this.registerSummitBtn.Size = new System.Drawing.Size(88, 27);
+            this.registerSummitBtn.TabIndex = 0;
+            this.registerSummitBtn.Text = "Register";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 370);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.registerSummitBtn);
+            this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioFemale);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioMale);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.dateOfBirth);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtFullname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegisterForm";
@@ -234,21 +234,21 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFullname;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.DateTimePicker dateOfBirth;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtWeight;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.Button registerSummitBtn;
     }
 }

@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerFormBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +40,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registerToolStripMenuItem,
             this.registerFormBtn,
-            this.loginToolStripMenuItem});
+            this.loginFormBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -52,18 +52,19 @@
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
             this.registerToolStripMenuItem.Size = new System.Drawing.Size(12, 20);
             // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.loginToolStripMenuItem.Text = "&Login";
-            // 
             // registerFormBtn
             // 
             this.registerFormBtn.Name = "registerFormBtn";
             this.registerFormBtn.Size = new System.Drawing.Size(61, 20);
             this.registerFormBtn.Text = "&Register";
             this.registerFormBtn.Click += new System.EventHandler(this.registerFormBtn_Click);
+            // 
+            // loginFormBtn
+            // 
+            this.loginFormBtn.Name = "loginFormBtn";
+            this.loginFormBtn.Size = new System.Drawing.Size(49, 20);
+            this.loginFormBtn.Text = "&Login";
+            this.loginFormBtn.Click += new System.EventHandler(this.loginFormBtn_Click);
             // 
             // MainForm
             // 
@@ -88,7 +89,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginFormBtn;
         private System.Windows.Forms.ToolStripMenuItem registerFormBtn;
     }
 }
