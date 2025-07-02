@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fitness_Tracker_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +91,17 @@
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Fitness_Tracker_DataSet.xsc">
+      <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Fitness_Tracker_DataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Fitness_Tracker_DataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Fitness_Tracker_DataSet.xss">
+      <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
