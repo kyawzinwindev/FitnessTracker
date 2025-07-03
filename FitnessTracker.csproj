@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="ActivityType.cs" />
+    <Compile Include="Fitness_Tracker_DataSet.cs">
+      <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Fitness_Tracker_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

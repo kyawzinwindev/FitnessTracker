@@ -39,7 +39,6 @@
             this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.radioMale = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -47,6 +46,8 @@
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.registerSummitBtn = new System.Windows.Forms.Button();
             this.radioOther = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -117,7 +118,7 @@
             // 
             this.dateOfBirth.Location = new System.Drawing.Point(424, 47);
             this.dateOfBirth.Name = "dateOfBirth";
-            this.dateOfBirth.Size = new System.Drawing.Size(271, 20);
+            this.dateOfBirth.Size = new System.Drawing.Size(283, 20);
             this.dateOfBirth.TabIndex = 9;
             // 
             // label5
@@ -132,7 +133,7 @@
             // radioMale
             // 
             this.radioMale.AutoSize = true;
-            this.radioMale.Location = new System.Drawing.Point(424, 119);
+            this.radioMale.Location = new System.Drawing.Point(6, 19);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(48, 17);
             this.radioMale.TabIndex = 11;
@@ -140,19 +141,10 @@
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(421, 92);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Gender";
-            // 
             // radioFemale
             // 
             this.radioFemale.AutoSize = true;
-            this.radioFemale.Location = new System.Drawing.Point(490, 119);
+            this.radioFemale.Location = new System.Drawing.Point(80, 19);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(59, 17);
             this.radioFemale.TabIndex = 13;
@@ -204,7 +196,7 @@
             // radioOther
             // 
             this.radioOther.AutoSize = true;
-            this.radioOther.Location = new System.Drawing.Point(567, 119);
+            this.radioOther.Location = new System.Drawing.Point(166, 19);
             this.radioOther.Name = "radioOther";
             this.radioOther.Size = new System.Drawing.Size(51, 17);
             this.radioOther.TabIndex = 18;
@@ -212,20 +204,29 @@
             this.radioOther.Text = "Other";
             this.radioOther.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioMale);
+            this.groupBox1.Controls.Add(this.radioOther);
+            this.groupBox1.Controls.Add(this.radioFemale);
+            this.groupBox1.Location = new System.Drawing.Point(425, 92);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(282, 47);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gender";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 370);
-            this.Controls.Add(this.radioOther);
+            this.ClientSize = new System.Drawing.Size(768, 370);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.registerSummitBtn);
             this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.radioFemale);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.radioMale);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateOfBirth);
             this.Controls.Add(this.txtPhone);
@@ -239,6 +240,8 @@
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,7 +260,6 @@
         private System.Windows.Forms.DateTimePicker dateOfBirth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioMale;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtWeight;
@@ -265,5 +267,6 @@
         private System.Windows.Forms.TextBox txtHeight;
         private System.Windows.Forms.Button registerSummitBtn;
         private System.Windows.Forms.RadioButton radioOther;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

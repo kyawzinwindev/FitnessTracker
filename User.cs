@@ -10,8 +10,8 @@ namespace FitnessTracker
     {
         protected string name, username, password, phone;
         protected DateTime dateOfBirth;
-        protected Gender gender;
-        protected double weight, height;
+        protected string gender;
+        protected decimal weight, height;
 
         public string Name { 
             get 
@@ -72,7 +72,7 @@ namespace FitnessTracker
             }
         }
 
-        public Gender Gender
+        public string Gender
         {
             get
             {
@@ -84,7 +84,7 @@ namespace FitnessTracker
             }
         }
 
-        public double Weight
+        public decimal Weight
         {
             get
             { 
@@ -97,7 +97,7 @@ namespace FitnessTracker
             }
         }
 
-        public double Height
+        public decimal Height
         {
             get
             {
