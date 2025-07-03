@@ -75,6 +75,7 @@
             this.loginSummitBtn.TabIndex = 4;
             this.loginSummitBtn.Text = "Login";
             this.loginSummitBtn.UseVisualStyleBackColor = true;
+            this.loginSummitBtn.Click += new System.EventHandler(this.loginSummitBtn_Click);
             // 
             // LoginForm
             // 
