@@ -57,6 +57,7 @@
       <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Gender.cs" />
+    <Compile Include="Goal.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
