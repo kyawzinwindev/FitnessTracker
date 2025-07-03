@@ -64,8 +64,6 @@ namespace FitnessTracker
                     return;
                 }
 
-
-                // Create new user object
                 User user = new User();
                 user.Name = txtFullname.Text;
                 user.Username = txtUsername.Text;
@@ -131,18 +129,20 @@ namespace FitnessTracker
 
         private bool checkHeightAndWeightIsNumber()
         {
-            if(!decimal.TryParse(txtHeight.Text, out decimal height) || height <= 0)
-            {
-                MessageBox.Show("Please enter a valid height.", "Invalid Height", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtHeight.Focus();
-                return false;
-            }
             if (!decimal.TryParse(txtWeight.Text, out decimal weight) || weight <= 0)
             {
                 MessageBox.Show("Please enter a valid weight.", "Invalid Weight", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtWeight.Focus();
                 return false;
             }
+
+            if (!decimal.TryParse(txtHeight.Text, out decimal height) || height <= 0)
+            {
+                MessageBox.Show("Please enter a valid height.", "Invalid Height", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtHeight.Focus();
+                return false;
+            }
+            
             return true;
         }
 
