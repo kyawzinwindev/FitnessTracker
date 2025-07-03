@@ -46,6 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.registerSummitBtn = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -199,11 +200,23 @@
             this.registerSummitBtn.TabIndex = 0;
             this.registerSummitBtn.Text = "Register";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(567, 119);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(51, 17);
+            this.radioButton1.TabIndex = 18;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Other";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 370);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.registerSummitBtn);
             this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.label8);
@@ -250,5 +263,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtHeight;
         private System.Windows.Forms.Button registerSummitBtn;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
