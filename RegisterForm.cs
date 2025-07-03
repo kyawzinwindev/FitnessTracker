@@ -17,5 +17,32 @@ namespace FitnessTracker
             InitializeComponent();
         }
 
+        private void registerSummitBtn_Click(object sender, EventArgs e)
+        {
+            if( txtFullname.Text == "" )
+            {
+                MessageBox.Show("Please Enter Your Full Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if( txtUsername.Text == "" )
+            {
+                MessageBox.Show("Please Enter Username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if( txtPassword.Text == "" )
+            {
+                MessageBox.Show("Please Enter Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if( txtPhone.Text == "" )
+            {
+                MessageBox.Show("Please Enter Your PHone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else if( !dateOfBirth.Checked ) 
+            {
+                MessageBox.Show("Please Enter Your Date of Birth", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //else if( )
+        }
     }
 }
