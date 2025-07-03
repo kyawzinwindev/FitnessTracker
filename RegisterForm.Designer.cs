@@ -34,8 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
             this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.radioMale = new System.Windows.Forms.RadioButton();
@@ -98,25 +96,9 @@
             this.txtPassword.Size = new System.Drawing.Size(283, 20);
             this.txtPassword.TabIndex = 6;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 239);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Phone";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(56, 267);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(283, 20);
-            this.txtPhone.TabIndex = 8;
-            // 
             // dateOfBirth
             // 
-            this.dateOfBirth.Location = new System.Drawing.Point(424, 47);
+            this.dateOfBirth.Location = new System.Drawing.Point(56, 267);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(283, 20);
             this.dateOfBirth.TabIndex = 9;
@@ -124,7 +106,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(421, 25);
+            this.label5.Location = new System.Drawing.Point(53, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 10;
@@ -155,7 +137,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(421, 163);
+            this.label7.Location = new System.Drawing.Point(422, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 14;
@@ -163,7 +145,7 @@
             // 
             // txtWeight
             // 
-            this.txtWeight.Location = new System.Drawing.Point(424, 195);
+            this.txtWeight.Location = new System.Drawing.Point(425, 119);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(283, 20);
             this.txtWeight.TabIndex = 15;
@@ -171,7 +153,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(422, 239);
+            this.label8.Location = new System.Drawing.Point(425, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 16;
@@ -179,7 +161,7 @@
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(424, 267);
+            this.txtHeight.Location = new System.Drawing.Point(424, 195);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(283, 20);
             this.txtHeight.TabIndex = 17;
@@ -209,7 +191,7 @@
             this.groupBox1.Controls.Add(this.radioMale);
             this.groupBox1.Controls.Add(this.radioOther);
             this.groupBox1.Controls.Add(this.radioFemale);
-            this.groupBox1.Location = new System.Drawing.Point(425, 92);
+            this.groupBox1.Location = new System.Drawing.Point(425, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(282, 47);
             this.groupBox1.TabIndex = 19;
@@ -229,8 +211,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateOfBirth);
-            this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
@@ -255,8 +235,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.DateTimePicker dateOfBirth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioMale;

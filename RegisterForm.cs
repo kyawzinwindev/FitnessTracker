@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,11 +34,6 @@ namespace FitnessTracker
             else if( txtPassword.Text == "" )
             {
                 MessageBox.Show("Please Enter Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            else if( txtPhone.Text == "" )
-            {
-                MessageBox.Show("Please Enter Your PHone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else if( !dateOfBirth.Checked ) 
@@ -74,22 +70,39 @@ namespace FitnessTracker
                 user.Name = txtFullname.Text;
                 user.Username = txtUsername.Text;
                 user.Password = txtPassword.Text;
-                user.Phone = txtPhone.Text;
                 user.DateOfBirth = dateOfBirth.Value;
                 user.Gender = this.getSelectedGender();
                 user.Weight = decimal.Parse(txtWeight.Text);
                 user.Height = decimal.Parse(txtHeight.Text);
 
-                int data = uds.Insert(user.Name, user.Username, user.Password, user.Phone, user.DateOfBirth, user.Gender, user.Weight, user.Height);
+                try
+                {
+                    int data = uds.Insert(user.Name, user.Username, user.Password, user.DateOfBirth, user.Gender, user.Weight, user.Height);
 
-                if (data > 0) {
-                    MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    if (data > 0)
+                    {
+                        MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
 
-                    LoginForm loginForm = new LoginForm();
-                    loginForm.Show();
-                }else { MessageBox.Show("Registration Failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                } 
+                        LoginForm loginForm = new LoginForm();
+                        loginForm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registration Failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    if (ex.Number == 2627 || ex.Number == 2601)
+                    {
+                        MessageBox.Show("That username is already taken.\nPlease choose another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

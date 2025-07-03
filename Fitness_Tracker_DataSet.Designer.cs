@@ -371,8 +371,6 @@ namespace FitnessTracker {
             
             private global::System.Data.DataColumn columnpassword;
             
-            private global::System.Data.DataColumn columnphone;
-            
             private global::System.Data.DataColumn columndateOfBirth;
             
             private global::System.Data.DataColumn columngender;
@@ -448,14 +446,6 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn phoneColumn {
-                get {
-                    return this.columnphone;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn dateOfBirthColumn {
                 get {
                     return this.columndateOfBirth;
@@ -523,14 +513,13 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow AddUsersRow(string name, string username, string password, string phone, System.DateTime dateOfBirth, string gender, decimal weight, decimal height) {
+            public UsersRow AddUsersRow(string name, string username, string password, System.DateTime dateOfBirth, string gender, decimal weight, decimal height) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         name,
                         username,
                         password,
-                        phone,
                         dateOfBirth,
                         gender,
                         weight,
@@ -568,7 +557,6 @@ namespace FitnessTracker {
                 this.columnname = base.Columns["name"];
                 this.columnusername = base.Columns["username"];
                 this.columnpassword = base.Columns["password"];
-                this.columnphone = base.Columns["phone"];
                 this.columndateOfBirth = base.Columns["dateOfBirth"];
                 this.columngender = base.Columns["gender"];
                 this.columnweight = base.Columns["weight"];
@@ -586,8 +574,6 @@ namespace FitnessTracker {
                 base.Columns.Add(this.columnusername);
                 this.columnpassword = new global::System.Data.DataColumn("password", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpassword);
-                this.columnphone = new global::System.Data.DataColumn("phone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphone);
                 this.columndateOfBirth = new global::System.Data.DataColumn("dateOfBirth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndateOfBirth);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
@@ -610,8 +596,6 @@ namespace FitnessTracker {
                 this.columnusername.MaxLength = 50;
                 this.columnpassword.AllowDBNull = false;
                 this.columnpassword.MaxLength = 50;
-                this.columnphone.AllowDBNull = false;
-                this.columnphone.MaxLength = 50;
                 this.columndateOfBirth.AllowDBNull = false;
                 this.columngender.AllowDBNull = false;
                 this.columngender.MaxLength = 50;
@@ -1508,17 +1492,6 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string phone {
-                get {
-                    return ((string)(this[this.tableUsers.phoneColumn]));
-                }
-                set {
-                    this[this.tableUsers.phoneColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime dateOfBirth {
                 get {
                     return ((global::System.DateTime)(this[this.tableUsers.dateOfBirthColumn]));
@@ -2038,7 +2011,6 @@ namespace FitnessTracker.Fitness_Tracker_DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("username", "username");
             tableMapping.ColumnMappings.Add("password", "password");
-            tableMapping.ColumnMappings.Add("phone", "phone");
             tableMapping.ColumnMappings.Add("dateOfBirth", "dateOfBirth");
             tableMapping.ColumnMappings.Add("gender", "gender");
             tableMapping.ColumnMappings.Add("weight", "weight");
@@ -2046,39 +2018,36 @@ namespace FitnessTracker.Fitness_Tracker_DataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Users] WHERE (([userID] = @Original_userID) AND ([name] = @Original_name) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([phone] = @Original_phone) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ([weight] = @Original_weight) AND ([height] = @Original_height))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Users] WHERE (([userID] = @Original_userID) AND ([name] = @Original_name) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ([weight] = @Original_weight) AND ([height] = @Original_height))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateOfBirth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_weight", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "height", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Users] ([name], [username], [password], [phone], [dateOfBirth], [gender], [weight], [height]) VALUES (@name, @username, @password, @phone, @dateOfBirth, @gender, @weight, @height);
-SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, height FROM Users WHERE (userID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Users] ([name], [username], [password], [dateOfBirth], [gender], [weight], [height]) VALUES (@name, @username, @password, @dateOfBirth, @gender, @weight, @height);
+SELECT userID, name, username, password, dateOfBirth, gender, weight, height FROM Users WHERE (userID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateOfBirth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateOfBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weight", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@height", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "height", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [name] = @name, [username] = @username, [password] = @password, [phone] = @phone, [dateOfBirth] = @dateOfBirth, [gender] = @gender, [weight] = @weight, [height] = @height WHERE (([userID] = @Original_userID) AND ([name] = @Original_name) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([phone] = @Original_phone) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ([weight] = @Original_weight) AND ([height] = @Original_height));
-SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, height FROM Users WHERE (userID = @userID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [name] = @name, [username] = @username, [password] = @password, [dateOfBirth] = @dateOfBirth, [gender] = @gender, [weight] = @weight, [height] = @height WHERE (([userID] = @Original_userID) AND ([name] = @Original_name) AND ([username] = @Original_username) AND ([password] = @Original_password) AND ([dateOfBirth] = @Original_dateOfBirth) AND ([gender] = @Original_gender) AND ([weight] = @Original_weight) AND ([height] = @Original_height));
+SELECT userID, name, username, password, dateOfBirth, gender, weight, height FROM Users WHERE (userID = @userID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateOfBirth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateOfBirth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weight", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "weight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2087,7 +2056,6 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_phone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dateOfBirth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dateOfBirth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_weight", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "weight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2169,7 +2137,7 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_userID, string Original_name, string Original_username, string Original_password, string Original_phone, System.DateTime Original_dateOfBirth, string Original_gender, decimal Original_weight, decimal Original_height) {
+        public virtual int Delete(int Original_userID, string Original_name, string Original_username, string Original_password, System.DateTime Original_dateOfBirth, string Original_gender, decimal Original_weight, decimal Original_height) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_userID));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
@@ -2189,21 +2157,15 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_password));
             }
-            if ((Original_phone == null)) {
-                throw new global::System.ArgumentNullException("Original_phone");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_phone));
-            }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_dateOfBirth));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_dateOfBirth));
             if ((Original_gender == null)) {
                 throw new global::System.ArgumentNullException("Original_gender");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_gender));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_gender));
             }
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_weight));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_height));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_weight));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_height));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2224,7 +2186,7 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, string username, string password, string phone, System.DateTime dateOfBirth, string gender, decimal weight, decimal height) {
+        public virtual int Insert(string name, string username, string password, System.DateTime dateOfBirth, string gender, decimal weight, decimal height) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -2243,21 +2205,15 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(password));
             }
-            if ((phone == null)) {
-                throw new global::System.ArgumentNullException("phone");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(phone));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(dateOfBirth));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
             if ((gender == null)) {
                 throw new global::System.ArgumentNullException("gender");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(gender));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(gender));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(weight));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(height));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(weight));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(height));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2282,7 +2238,6 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
                     string name, 
                     string username, 
                     string password, 
-                    string phone, 
                     System.DateTime dateOfBirth, 
                     string gender, 
                     decimal weight, 
@@ -2291,7 +2246,6 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
                     string Original_name, 
                     string Original_username, 
                     string Original_password, 
-                    string Original_phone, 
                     System.DateTime Original_dateOfBirth, 
                     string Original_gender, 
                     decimal Original_weight, 
@@ -2315,56 +2269,44 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(password));
             }
-            if ((phone == null)) {
-                throw new global::System.ArgumentNullException("phone");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(phone));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(dateOfBirth));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dateOfBirth));
             if ((gender == null)) {
                 throw new global::System.ArgumentNullException("gender");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(gender));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(gender));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(weight));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(height));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_userID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(weight));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(height));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_userID));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_name));
             }
             if ((Original_username == null)) {
                 throw new global::System.ArgumentNullException("Original_username");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_username));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_username));
             }
             if ((Original_password == null)) {
                 throw new global::System.ArgumentNullException("Original_password");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_password));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_password));
             }
-            if ((Original_phone == null)) {
-                throw new global::System.ArgumentNullException("Original_phone");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_phone));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_dateOfBirth));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_dateOfBirth));
             if ((Original_gender == null)) {
                 throw new global::System.ArgumentNullException("Original_gender");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_gender));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_gender));
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_weight));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_height));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(userID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_weight));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_height));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(userID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2385,25 +2327,8 @@ SELECT userID, name, username, password, phone, dateOfBirth, gender, weight, hei
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string name, 
-                    string username, 
-                    string password, 
-                    string phone, 
-                    System.DateTime dateOfBirth, 
-                    string gender, 
-                    decimal weight, 
-                    decimal height, 
-                    int Original_userID, 
-                    string Original_name, 
-                    string Original_username, 
-                    string Original_password, 
-                    string Original_phone, 
-                    System.DateTime Original_dateOfBirth, 
-                    string Original_gender, 
-                    decimal Original_weight, 
-                    decimal Original_height) {
-            return this.Update(name, username, password, phone, dateOfBirth, gender, weight, height, Original_userID, Original_name, Original_username, Original_password, Original_phone, Original_dateOfBirth, Original_gender, Original_weight, Original_height, Original_userID);
+        public virtual int Update(string name, string username, string password, System.DateTime dateOfBirth, string gender, decimal weight, decimal height, int Original_userID, string Original_name, string Original_username, string Original_password, System.DateTime Original_dateOfBirth, string Original_gender, decimal Original_weight, decimal Original_height) {
+            return this.Update(name, username, password, dateOfBirth, gender, weight, height, Original_userID, Original_name, Original_username, Original_password, Original_dateOfBirth, Original_gender, Original_weight, Original_height, Original_userID);
         }
     }
     

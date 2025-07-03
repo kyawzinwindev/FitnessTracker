@@ -8,7 +8,7 @@ namespace FitnessTracker
 {
     internal class User
     {
-        protected string name, username, password, phone;
+        protected string name, username, password;
         protected DateTime dateOfBirth;
         protected string gender;
         protected decimal weight, height;
@@ -45,18 +45,6 @@ namespace FitnessTracker
             set
             {
                 password = value;
-            }
-        }
-
-        public string Phone
-        {
-            get
-            {
-                return phone;
-            }
-            set
-            {
-                phone = value;
             }
         }
 
