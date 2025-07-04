@@ -33,6 +33,8 @@
             this.registerFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.loginFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.activityMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.goalMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +44,8 @@
             this.registerToolStripMenuItem,
             this.registerFormBtn,
             this.loginFormBtn,
+            this.goalMenuBtn,
+            this.activityMenuBtn,
             this.logoutBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,6 +79,18 @@
             this.logoutBtn.Text = "&Logout";
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
+            // activityMenuBtn
+            // 
+            this.activityMenuBtn.Name = "activityMenuBtn";
+            this.activityMenuBtn.Size = new System.Drawing.Size(59, 20);
+            this.activityMenuBtn.Text = "&Activity";
+            // 
+            // goalMenuBtn
+            // 
+            this.goalMenuBtn.Name = "goalMenuBtn";
+            this.goalMenuBtn.Size = new System.Drawing.Size(43, 20);
+            this.goalMenuBtn.Text = "&Goal";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +118,8 @@
         private System.Windows.Forms.ToolStripMenuItem loginFormBtn;
         private System.Windows.Forms.ToolStripMenuItem registerFormBtn;
         private System.Windows.Forms.ToolStripMenuItem logoutBtn;
+        private System.Windows.Forms.ToolStripMenuItem goalMenuBtn;
+        private System.Windows.Forms.ToolStripMenuItem activityMenuBtn;
     }
 }
 

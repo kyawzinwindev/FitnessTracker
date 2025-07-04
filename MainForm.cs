@@ -58,8 +58,8 @@ namespace FitnessTracker
             loginFormBtn.Visible = !logged;
 
             logoutBtn.Visible = logged;
-
-            //TO DO: add activity , goal  buttons
+            goalMenuBtn.Visible = logged;
+            activityMenuBtn.Visible = logged;
 
             //TO DO: add welcome text or something eg, Welcome User!
         }
