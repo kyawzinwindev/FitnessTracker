@@ -26,9 +26,42 @@ namespace FitnessTracker
 
         private void loginFormBtn_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
+            using (var dlg = new LoginForm())
+            {
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.RefreshUI();
+                }
+            }
 
-            loginForm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.RefreshUI();
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session.Logout();
+
+            MessageBox.Show("You have been logged out successfully.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.RefreshUI();
+        }
+
+        public void RefreshUI()
+        {
+            bool logged = Session.IsLoggedIn;
+
+            registerFormBtn.Visible = !logged;
+            loginFormBtn.Visible = !logged;
+
+            logoutBtn.Visible = logged;
+
+            //TO DO: add activity , goal  buttons
+
+            //TO DO: add welcome text or something eg, Welcome User!
         }
     }
 }

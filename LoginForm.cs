@@ -30,7 +30,7 @@ namespace FitnessTracker
                 {
                     Session.Login(txtUsername.Text);
 
-                    MessageBox.Show("Login successful!");
+                    MessageBox.Show("You have been logged in successfully.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();

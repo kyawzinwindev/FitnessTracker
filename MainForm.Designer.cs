@@ -32,6 +32,7 @@
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.loginFormBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +41,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registerToolStripMenuItem,
             this.registerFormBtn,
-            this.loginFormBtn});
+            this.loginFormBtn,
+            this.logoutBtn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -66,6 +68,13 @@
             this.loginFormBtn.Text = "&Login";
             this.loginFormBtn.Click += new System.EventHandler(this.loginFormBtn_Click);
             // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(57, 20);
+            this.logoutBtn.Text = "&Logout";
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,6 +87,7 @@
             this.Name = "MainForm";
             this.Text = "Fitness Tracker";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -91,6 +101,7 @@
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginFormBtn;
         private System.Windows.Forms.ToolStripMenuItem registerFormBtn;
+        private System.Windows.Forms.ToolStripMenuItem logoutBtn;
     }
 }
 
