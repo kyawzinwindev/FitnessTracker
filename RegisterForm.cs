@@ -104,6 +104,7 @@ namespace FitnessTracker
             }
         }
 
+        //Check username and password validity
         private bool checkUsernameAndPassword()
         {
             var validUsername = Regex.IsMatch(txtUsername.Text, @"^[a-zA-Z0-9]+$");
@@ -127,6 +128,7 @@ namespace FitnessTracker
             return true;
         }
 
+        //Check if height and weight are valid numbers
         private bool checkHeightAndWeightIsNumber()
         {
             if (!decimal.TryParse(txtWeight.Text, out decimal weight) || weight <= 0)
