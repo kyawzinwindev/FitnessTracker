@@ -30,9 +30,9 @@ namespace FitnessTracker {
         
         private ActivitiesDataTable tableActivities;
         
-        private global::System.Data.DataRelation relationFK__Goals__userID__3E52440B;
+        private global::System.Data.DataRelation relationFK__Goals__userID__5FB337D6;
         
-        private global::System.Data.DataRelation relationFK__Activity__userID__3B75D760;
+        private global::System.Data.DataRelation relationFK__Activitie__userI__5CD6CB2B;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -246,8 +246,8 @@ namespace FitnessTracker {
                     this.tableActivities.InitVars();
                 }
             }
-            this.relationFK__Goals__userID__3E52440B = this.Relations["FK__Goals__userID__3E52440B"];
-            this.relationFK__Activity__userID__3B75D760 = this.Relations["FK__Activity__userID__3B75D760"];
+            this.relationFK__Goals__userID__5FB337D6 = this.Relations["FK__Goals__userID__5FB337D6"];
+            this.relationFK__Activitie__userI__5CD6CB2B = this.Relations["FK__Activitie__userI__5CD6CB2B"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -264,14 +264,14 @@ namespace FitnessTracker {
             base.Tables.Add(this.tableGoals);
             this.tableActivities = new ActivitiesDataTable();
             base.Tables.Add(this.tableActivities);
-            this.relationFK__Goals__userID__3E52440B = new global::System.Data.DataRelation("FK__Goals__userID__3E52440B", new global::System.Data.DataColumn[] {
+            this.relationFK__Goals__userID__5FB337D6 = new global::System.Data.DataRelation("FK__Goals__userID__5FB337D6", new global::System.Data.DataColumn[] {
                         this.tableUsers.userIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableGoals.userIDColumn}, false);
-            this.Relations.Add(this.relationFK__Goals__userID__3E52440B);
-            this.relationFK__Activity__userID__3B75D760 = new global::System.Data.DataRelation("FK__Activity__userID__3B75D760", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Goals__userID__5FB337D6);
+            this.relationFK__Activitie__userI__5CD6CB2B = new global::System.Data.DataRelation("FK__Activitie__userI__5CD6CB2B", new global::System.Data.DataColumn[] {
                         this.tableUsers.userIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableActivities.userIDColumn}, false);
-            this.Relations.Add(this.relationFK__Activity__userID__3B75D760);
+            this.Relations.Add(this.relationFK__Activitie__userI__5CD6CB2B);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -864,17 +864,17 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GoalsRow AddGoalsRow(int goalID, UsersRow parentUsersRowByFK__Goals__userID__3E52440B, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved) {
+            public GoalsRow AddGoalsRow(UsersRow parentUsersRowByFK__Goals__userID__5FB337D6, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved) {
                 GoalsRow rowGoalsRow = ((GoalsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        goalID,
+                        null,
                         null,
                         targetCalories,
                         startDate,
                         endDate,
                         isGoalAchieved};
-                if ((parentUsersRowByFK__Goals__userID__3E52440B != null)) {
-                    columnValuesArray[1] = parentUsersRowByFK__Goals__userID__3E52440B[0];
+                if ((parentUsersRowByFK__Goals__userID__5FB337D6 != null)) {
+                    columnValuesArray[1] = parentUsersRowByFK__Goals__userID__5FB337D6[0];
                 }
                 rowGoalsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGoalsRow);
@@ -930,7 +930,11 @@ namespace FitnessTracker {
                 base.Columns.Add(this.columnisGoalAchieved);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columngoalID}, true));
+                this.columngoalID.AutoIncrement = true;
+                this.columngoalID.AutoIncrementSeed = -1;
+                this.columngoalID.AutoIncrementStep = -1;
                 this.columngoalID.AllowDBNull = false;
+                this.columngoalID.ReadOnly = true;
                 this.columngoalID.Unique = true;
                 this.columnuserID.AllowDBNull = false;
                 this.columntargetCalories.AllowDBNull = false;
@@ -1220,10 +1224,10 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivitiesRow AddActivitiesRow(int activityID, UsersRow parentUsersRowByFK__Activity__userID__3B75D760, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, decimal burnedCalories) {
+            public ActivitiesRow AddActivitiesRow(UsersRow parentUsersRowByFK__Activitie__userI__5CD6CB2B, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, decimal burnedCalories) {
                 ActivitiesRow rowActivitiesRow = ((ActivitiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        activityID,
+                        null,
                         null,
                         activityType,
                         activityDate,
@@ -1231,8 +1235,8 @@ namespace FitnessTracker {
                         metric2,
                         metric3,
                         burnedCalories};
-                if ((parentUsersRowByFK__Activity__userID__3B75D760 != null)) {
-                    columnValuesArray[1] = parentUsersRowByFK__Activity__userID__3B75D760[0];
+                if ((parentUsersRowByFK__Activitie__userI__5CD6CB2B != null)) {
+                    columnValuesArray[1] = parentUsersRowByFK__Activitie__userI__5CD6CB2B[0];
                 }
                 rowActivitiesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowActivitiesRow);
@@ -1294,7 +1298,11 @@ namespace FitnessTracker {
                 base.Columns.Add(this.columnburnedCalories);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnactivityID}, true));
+                this.columnactivityID.AutoIncrement = true;
+                this.columnactivityID.AutoIncrementSeed = -1;
+                this.columnactivityID.AutoIncrementStep = -1;
                 this.columnactivityID.AllowDBNull = false;
+                this.columnactivityID.ReadOnly = true;
                 this.columnactivityID.Unique = true;
                 this.columnuserID.AllowDBNull = false;
                 this.columnactivityType.AllowDBNull = false;
@@ -1537,22 +1545,22 @@ namespace FitnessTracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GoalsRow[] GetGoalsRows() {
-                if ((this.Table.ChildRelations["FK__Goals__userID__3E52440B"] == null)) {
+                if ((this.Table.ChildRelations["FK__Goals__userID__5FB337D6"] == null)) {
                     return new GoalsRow[0];
                 }
                 else {
-                    return ((GoalsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Goals__userID__3E52440B"])));
+                    return ((GoalsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Goals__userID__5FB337D6"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ActivitiesRow[] GetActivitiesRows() {
-                if ((this.Table.ChildRelations["FK__Activity__userID__3B75D760"] == null)) {
+                if ((this.Table.ChildRelations["FK__Activitie__userI__5CD6CB2B"] == null)) {
                     return new ActivitiesRow[0];
                 }
                 else {
-                    return ((ActivitiesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Activity__userID__3B75D760"])));
+                    return ((ActivitiesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Activitie__userI__5CD6CB2B"])));
                 }
             }
         }
@@ -1641,10 +1649,10 @@ namespace FitnessTracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersRow UsersRow {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Goals__userID__3E52440B"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Goals__userID__5FB337D6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Goals__userID__3E52440B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Goals__userID__5FB337D6"]);
                 }
             }
         }
@@ -1760,10 +1768,10 @@ namespace FitnessTracker {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersRow UsersRow {
                 get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Activity__userID__3B75D760"])));
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__Activitie__userI__5CD6CB2B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Activity__userID__3B75D760"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Activitie__userI__5CD6CB2B"]);
                 }
             }
             
@@ -2495,10 +2503,9 @@ SELECT userID, name, username, password, dateOfBirth, gender, weight, height FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isGoalAchieved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isGoalAchieved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Goals] ([goalID], [userID], [targetCalories], [startDate], [endDate], [isGoalAchieved]) VALUES (@goalID, @userID, @targetCalories, @startDate, @endDate, @isGoalAchieved);
-SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM Goals WHERE (goalID = @goalID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Goals] ([userID], [targetCalories], [startDate], [endDate], [isGoalAchieved]) VALUES (@userID, @targetCalories, @startDate, @endDate, @isGoalAchieved);
+SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM Goals WHERE (goalID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goalID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goalID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@targetCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "targetCalories", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2506,10 +2513,9 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isGoalAchieved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isGoalAchieved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Goals] SET [goalID] = @goalID, [userID] = @userID, [targetCalories] = @targetCalories, [startDate] = @startDate, [endDate] = @endDate, [isGoalAchieved] = @isGoalAchieved WHERE (([goalID] = @Original_goalID) AND ([userID] = @Original_userID) AND ([targetCalories] = @Original_targetCalories) AND ([startDate] = @Original_startDate) AND ([endDate] = @Original_endDate) AND ([isGoalAchieved] = @Original_isGoalAchieved));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Goals] SET [userID] = @userID, [targetCalories] = @targetCalories, [startDate] = @startDate, [endDate] = @endDate, [isGoalAchieved] = @isGoalAchieved WHERE (([goalID] = @Original_goalID) AND ([userID] = @Original_userID) AND ([targetCalories] = @Original_targetCalories) AND ([startDate] = @Original_startDate) AND ([endDate] = @Original_endDate) AND ([isGoalAchieved] = @Original_isGoalAchieved));
 SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM Goals WHERE (goalID = @goalID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goalID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "goalID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@targetCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "targetCalories", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2521,6 +2527,7 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_startDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "startDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_endDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "endDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_isGoalAchieved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "isGoalAchieved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goalID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "goalID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2624,13 +2631,12 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int goalID, int userID, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(goalID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(userID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(targetCalories));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(startDate));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(endDate));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(isGoalAchieved));
+        public virtual int Insert(int userID, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(userID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(targetCalories));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(startDate));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(endDate));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(isGoalAchieved));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2651,19 +2657,19 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int goalID, int userID, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved, int Original_goalID, int Original_userID, decimal Original_targetCalories, System.DateTime Original_startDate, System.DateTime Original_endDate, bool Original_isGoalAchieved) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(goalID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(userID));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(targetCalories));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(startDate));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(endDate));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(isGoalAchieved));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_goalID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_userID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_targetCalories));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_startDate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_endDate));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(Original_isGoalAchieved));
+        public virtual int Update(int userID, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved, int Original_goalID, int Original_userID, decimal Original_targetCalories, System.DateTime Original_startDate, System.DateTime Original_endDate, bool Original_isGoalAchieved, int goalID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(userID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(targetCalories));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(startDate));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(endDate));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((bool)(isGoalAchieved));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_goalID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_userID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_targetCalories));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_startDate));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_endDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(Original_isGoalAchieved));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(goalID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2685,7 +2691,7 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int userID, decimal targetCalories, System.DateTime startDate, System.DateTime endDate, bool isGoalAchieved, int Original_goalID, int Original_userID, decimal Original_targetCalories, System.DateTime Original_startDate, System.DateTime Original_endDate, bool Original_isGoalAchieved) {
-            return this.Update(Original_goalID, userID, targetCalories, startDate, endDate, isGoalAchieved, Original_goalID, Original_userID, Original_targetCalories, Original_startDate, Original_endDate, Original_isGoalAchieved);
+            return this.Update(userID, targetCalories, startDate, endDate, isGoalAchieved, Original_goalID, Original_userID, Original_targetCalories, Original_startDate, Original_endDate, Original_isGoalAchieved, Original_goalID);
         }
     }
     
@@ -2834,10 +2840,9 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([activityID], [userID], [activityType], [activityDate], [metric1], [metric2], [metric3], [burnedCalories]) VALUES (@activityID, @userID, @activityType, @activityDate, @metric1, @metric2, @metric3, @burnedCalories);
-SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = @activityID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([userID], [activityType], [activityDate], [metric1], [metric2], [metric3], [burnedCalories]) VALUES (@userID, @activityType, @activityDate, @metric1, @metric2, @metric3, @burnedCalories);
+SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2847,10 +2852,9 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [activityID] = @activityID, [userID] = @userID, [activityType] = @activityType, [activityDate] = @activityDate, [metric1] = @metric1, [metric2] = @metric2, [metric3] = @metric3, [burnedCalories] = @burnedCalories WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDate] = @Original_activityDate) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [userID] = @userID, [activityType] = @activityType, [activityDate] = @activityDate, [metric1] = @metric1, [metric2] = @metric2, [metric3] = @metric3, [burnedCalories] = @burnedCalories WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDate] = @Original_activityDate) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)));
 SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = @activityID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2867,6 +2871,7 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_burnedCalories", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "burnedCalories", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2999,39 +3004,38 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int activityID, int userID, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, global::System.Nullable<decimal> burnedCalories) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(activityID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(userID));
+        public virtual int Insert(int userID, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, global::System.Nullable<decimal> burnedCalories) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(userID));
             if ((activityType == null)) {
                 throw new global::System.ArgumentNullException("activityType");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(activityType));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(activityType));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(activityDate));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(activityDate));
             if ((metric1 == null)) {
                 throw new global::System.ArgumentNullException("metric1");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(metric1));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(metric1));
             }
             if ((metric2 == null)) {
                 throw new global::System.ArgumentNullException("metric2");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(metric2));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(metric2));
             }
             if ((metric3 == null)) {
                 throw new global::System.ArgumentNullException("metric3");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(metric3));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(metric3));
             }
             if ((burnedCalories.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((decimal)(burnedCalories.Value));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(burnedCalories.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3054,7 +3058,6 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int activityID, 
                     int userID, 
                     string activityType, 
                     System.DateTime activityDate, 
@@ -3069,75 +3072,76 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
                     string Original_metric1, 
                     string Original_metric2, 
                     string Original_metric3, 
-                    global::System.Nullable<decimal> Original_burnedCalories) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(activityID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(userID));
+                    global::System.Nullable<decimal> Original_burnedCalories, 
+                    int activityID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(userID));
             if ((activityType == null)) {
                 throw new global::System.ArgumentNullException("activityType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(activityType));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(activityType));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(activityDate));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(activityDate));
             if ((metric1 == null)) {
                 throw new global::System.ArgumentNullException("metric1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(metric1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(metric1));
             }
             if ((metric2 == null)) {
                 throw new global::System.ArgumentNullException("metric2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(metric2));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(metric2));
             }
             if ((metric3 == null)) {
                 throw new global::System.ArgumentNullException("metric3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(metric3));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(metric3));
             }
             if ((burnedCalories.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(burnedCalories.Value));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(burnedCalories.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_activityID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_userID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_activityID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_userID));
             if ((Original_activityType == null)) {
                 throw new global::System.ArgumentNullException("Original_activityType");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_activityType));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_activityType));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_activityDate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_activityDate));
             if ((Original_metric1 == null)) {
                 throw new global::System.ArgumentNullException("Original_metric1");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_metric1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_metric1));
             }
             if ((Original_metric2 == null)) {
                 throw new global::System.ArgumentNullException("Original_metric2");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_metric2));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_metric2));
             }
             if ((Original_metric3 == null)) {
                 throw new global::System.ArgumentNullException("Original_metric3");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_metric3));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_metric3));
             }
             if ((Original_burnedCalories.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(Original_burnedCalories.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_burnedCalories.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(activityID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3159,7 +3163,7 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int userID, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, global::System.Nullable<decimal> burnedCalories, int Original_activityID, int Original_userID, string Original_activityType, System.DateTime Original_activityDate, string Original_metric1, string Original_metric2, string Original_metric3, global::System.Nullable<decimal> Original_burnedCalories) {
-            return this.Update(Original_activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories, Original_activityID, Original_userID, Original_activityType, Original_activityDate, Original_metric1, Original_metric2, Original_metric3, Original_burnedCalories);
+            return this.Update(userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories, Original_activityID, Original_userID, Original_activityType, Original_activityDate, Original_metric1, Original_metric2, Original_metric3, Original_burnedCalories, Original_activityID);
         }
     }
     

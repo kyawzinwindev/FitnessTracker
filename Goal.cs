@@ -9,7 +9,7 @@ namespace FitnessTracker
     internal class Goal
     {
         protected int userID;
-        protected double targetCalories;
+        protected decimal targetCalories;
         protected DateTime startDate, endDate;
         protected bool isGoalAchieved;
 
@@ -19,7 +19,7 @@ namespace FitnessTracker
             set { userID = value; }
         }
 
-        public double TargetCalories
+        public decimal TargetCalories
         {
             get { return targetCalories; }
             set { targetCalories = value; }

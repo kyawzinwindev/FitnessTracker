@@ -28,7 +28,7 @@ namespace FitnessTracker
                 var password = user.Rows[0]["Password"].ToString();
                 if (password == txtPassword.Text)
                 {
-                    Session.Login(txtUsername.Text);
+                    Session.Login(Convert.ToInt32(user.Rows[0]["UserID"]),txtUsername.Text);
 
                     MessageBox.Show("You have been logged in successfully.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

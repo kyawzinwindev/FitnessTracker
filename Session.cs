@@ -9,17 +9,20 @@ namespace FitnessTracker
     public static class Session
     {
         public static string CurrentUser { get; private set; }
+        public static int UserID { get; private set; }
 
         public static bool IsLoggedIn => !string.IsNullOrEmpty(CurrentUser);
 
-        public static void Login(string username)
+        public static void Login(int userID,string username)
         {
             CurrentUser = username;
+            UserID = userID;
         }
 
         public static void Logout()
         {
             CurrentUser = null;
+            UserID = 0;
         }
     }
 }

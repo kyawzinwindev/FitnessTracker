@@ -7,31 +7,31 @@
 <DiagramLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Users" ZOrder="5" X="410" Y="112" Height="248" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
-    <Shape ID="DesignTable:Goals" ZOrder="4" X="680" Y="138" Height="191" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:Activities" ZOrder="2" X="92" Y="172" Height="229" Width="198" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:Goals" ZOrder="4" X="781" Y="212" Height="191" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:Activities" ZOrder="2" X="154" Y="247" Height="229" Width="198" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK__Goals__userID__3E52440B" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Goals__userID__5FB337D6" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>630</X>
-          <Y>186</Y>
+          <Y>260</Y>
         </Point>
         <Point>
-          <X>680</X>
-          <Y>186</Y>
+          <X>781</X>
+          <Y>260</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK__Activity__userID__3B75D760" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK__Activitie__userI__5CD6CB2B" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>410</X>
-          <Y>220</Y>
+          <Y>295</Y>
         </Point>
         <Point>
-          <X>290</X>
-          <Y>220</Y>
+          <X>352</X>
+          <Y>295</Y>
         </Point>
       </RoutePoints>
     </Connector>
