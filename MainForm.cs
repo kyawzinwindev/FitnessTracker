@@ -63,5 +63,16 @@ namespace FitnessTracker
 
             //TO DO: add welcome text or something eg, Welcome User!
         }
+
+        private void lIstToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void createGoalFormBtn_Click(object sender, EventArgs e)
+        {
+            GoalForm goalForm = new GoalForm();
+            goalForm.Show();
+        }
     }
 }

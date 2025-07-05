@@ -28,30 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.loginFormBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.activityMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.goalMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createGoalFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registerToolStripMenuItem,
-            this.registerFormBtn,
-            this.loginFormBtn,
-            this.goalMenuBtn,
-            this.activityMenuBtn,
-            this.logoutBtn});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // registerToolStripMenuItem
             // 
@@ -72,6 +59,12 @@
             this.loginFormBtn.Text = "&Login";
             this.loginFormBtn.Click += new System.EventHandler(this.loginFormBtn_Click);
             // 
+            // activityMenuBtn
+            // 
+            this.activityMenuBtn.Name = "activityMenuBtn";
+            this.activityMenuBtn.Size = new System.Drawing.Size(59, 20);
+            this.activityMenuBtn.Text = "&Activity";
+            // 
             // logoutBtn
             // 
             this.logoutBtn.Name = "logoutBtn";
@@ -79,17 +72,42 @@
             this.logoutBtn.Text = "&Logout";
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // activityMenuBtn
+            // menuStrip1
             // 
-            this.activityMenuBtn.Name = "activityMenuBtn";
-            this.activityMenuBtn.Size = new System.Drawing.Size(59, 20);
-            this.activityMenuBtn.Text = "&Activity";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerToolStripMenuItem,
+            this.loginFormBtn,
+            this.registerFormBtn,
+            this.goalMenuBtn,
+            this.activityMenuBtn,
+            this.logoutBtn});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // goalMenuBtn
             // 
+            this.goalMenuBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listToolStripMenuItem,
+            this.createGoalFormBtn});
             this.goalMenuBtn.Name = "goalMenuBtn";
             this.goalMenuBtn.Size = new System.Drawing.Size(43, 20);
             this.goalMenuBtn.Text = "&Goal";
+            // 
+            // listToolStripMenuItem
+            // 
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem.Text = "List";
+            // 
+            // createGoalFormBtn
+            // 
+            this.createGoalFormBtn.Name = "createGoalFormBtn";
+            this.createGoalFormBtn.Size = new System.Drawing.Size(180, 22);
+            this.createGoalFormBtn.Text = "Create New Goal";
+            this.createGoalFormBtn.Click += new System.EventHandler(this.createGoalFormBtn_Click);
             // 
             // MainForm
             // 
@@ -113,13 +131,15 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginFormBtn;
         private System.Windows.Forms.ToolStripMenuItem registerFormBtn;
-        private System.Windows.Forms.ToolStripMenuItem logoutBtn;
-        private System.Windows.Forms.ToolStripMenuItem goalMenuBtn;
+        private System.Windows.Forms.ToolStripMenuItem loginFormBtn;
         private System.Windows.Forms.ToolStripMenuItem activityMenuBtn;
+        private System.Windows.Forms.ToolStripMenuItem logoutBtn;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem goalMenuBtn;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createGoalFormBtn;
     }
 }
 

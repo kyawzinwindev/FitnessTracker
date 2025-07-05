@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="Gender.cs" />
     <Compile Include="Goal.cs" />
+    <Compile Include="GoalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoalForm.Designer.cs">
+      <DependentUpon>GoalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="GoalForm.resx">
+      <DependentUpon>GoalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
