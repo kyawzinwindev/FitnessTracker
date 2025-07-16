@@ -37,6 +37,8 @@
             this.goalMenuBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createGoalFormBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.listToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.createActivityFormBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +63,9 @@
             // 
             // activityMenuBtn
             // 
+            this.activityMenuBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listToolStripMenuItem1,
+            this.createActivityFormBtn});
             this.activityMenuBtn.Name = "activityMenuBtn";
             this.activityMenuBtn.Size = new System.Drawing.Size(59, 20);
             this.activityMenuBtn.Text = "&Activity";
@@ -109,6 +114,19 @@
             this.createGoalFormBtn.Text = "Create New Goal";
             this.createGoalFormBtn.Click += new System.EventHandler(this.createGoalFormBtn_Click);
             // 
+            // listToolStripMenuItem1
+            // 
+            this.listToolStripMenuItem1.Name = "listToolStripMenuItem1";
+            this.listToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.listToolStripMenuItem1.Text = "List";
+            // 
+            // createActivityFormBtn
+            // 
+            this.createActivityFormBtn.Name = "createActivityFormBtn";
+            this.createActivityFormBtn.Size = new System.Drawing.Size(180, 22);
+            this.createActivityFormBtn.Text = "Create Activity";
+            this.createActivityFormBtn.Click += new System.EventHandler(this.createActivityFormBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +158,8 @@
         private System.Windows.Forms.ToolStripMenuItem goalMenuBtn;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createGoalFormBtn;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem createActivityFormBtn;
     }
 }
 

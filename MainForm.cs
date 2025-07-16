@@ -74,5 +74,11 @@ namespace FitnessTracker
             GoalForm goalForm = new GoalForm();
             goalForm.Show();
         }
+
+        private void createActivityFormBtn_Click(object sender, EventArgs e)
+        {
+            ActivityForm activityForm = new ActivityForm();
+            activityForm.Show();
+        }
     }
 }
