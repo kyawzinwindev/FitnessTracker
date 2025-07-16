@@ -107,18 +107,19 @@
             // 
             // createActivitySubmitBtn
             // 
-            this.createActivitySubmitBtn.Location = new System.Drawing.Point(147, 266);
+            this.createActivitySubmitBtn.Location = new System.Drawing.Point(161, 268);
             this.createActivitySubmitBtn.Name = "createActivitySubmitBtn";
             this.createActivitySubmitBtn.Size = new System.Drawing.Size(75, 23);
             this.createActivitySubmitBtn.TabIndex = 8;
             this.createActivitySubmitBtn.Text = "Create";
             this.createActivitySubmitBtn.UseVisualStyleBackColor = true;
+            this.createActivitySubmitBtn.Click += new System.EventHandler(this.createActivitySubmitBtn_Click);
             // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 317);
+            this.ClientSize = new System.Drawing.Size(398, 317);
             this.Controls.Add(this.createActivitySubmitBtn);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);

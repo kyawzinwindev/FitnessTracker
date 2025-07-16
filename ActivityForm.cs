@@ -65,5 +65,37 @@ namespace FitnessTracker
                     break;
             }
         }
+
+        private void createActivitySubmitBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private decimal CalculateBurnedCalories(ActivityType activityType, decimal Metric1, decimal Metric2, decimal Metric3)
+        {
+            switch (activityType)
+            {
+                case ActivityType.Walking:
+                    return 3.5m * Metric1 + 50 * Metric2 + 0.04m * Metric3;
+
+                case ActivityType.Swimming:
+                    return 6 * Metric1 + 0.1m * Metric2 + 8 * Metric3;
+
+                case ActivityType.Running:
+                    return 6 * Metric1 + 60 * Metric2 + 0.75m * Metric3;
+
+                case ActivityType.Cycling:
+                    return 6 * Metric1 + 30 * Metric2 + 0.5m * Metric3;
+
+                case ActivityType.JumpRope:
+                    return 12 * Metric1 * Metric2 + 0.1m * Metric3;
+
+                case ActivityType.Yoga:
+                    return 3 * Metric1 + 0.05m * Metric3 * Metric1 * Metric2;
+
+                default:
+                    return 0;
+            }
+        }
     }
 }
