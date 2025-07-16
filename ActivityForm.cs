@@ -29,33 +29,33 @@ namespace FitnessTracker
             switch (selectedActivity)
             {
                 case ActivityType.Walking:
-                    metric2lbl.Text = "Duration (min):";
-                    metric1lbl.Text = "Distance (km):";
+                    metric1lbl.Text = "Duration (min):";
+                    metric2lbl.Text = "Distance (km):";
                     metric3lbl.Text = "Steps:";
                     break;
 
                 case ActivityType.Swimming:
-                    metric2lbl.Text = "Duration (min):";
-                    metric1lbl.Text = "Average Heart Rate:";
+                    metric1lbl.Text = "Duration (min):";
+                    metric2lbl.Text = "Average Heart Rate:";
                     metric3lbl.Text = "Laps:";
                     break;
 
                 case ActivityType.Running:
-                    metric2lbl.Text = "Duration (min):";
-                    metric1lbl.Text = "Distance (km):";
+                    metric1lbl.Text = "Duration (min):";
+                    metric2lbl.Text = "Distance (km):";
                     metric3lbl.Text = "Pace (min/km):";
                     break;
 
                 case ActivityType.Cycling:
-                    metric2lbl.Text = "Duration (min):";
-                    metric1lbl.Text = "Distance (km):";
+                    metric1lbl.Text = "Duration (min):";
+                    metric2lbl.Text = "Distance (km):";
                     metric3lbl.Text = "Average Speed (km/h):";
                     break;
 
                 case ActivityType.JumpRope:
                     metric1lbl.Text = "Duration (min):";
-                    metric3lbl.Text = "Intensity Level:";
-                    metric2lbl.Text = "Total Jumps:";
+                    metric2lbl.Text = "Intensity Level:";
+                    metric3lbl.Text = "Total Jumps:";
                     break;
 
                 case ActivityType.Yoga:
