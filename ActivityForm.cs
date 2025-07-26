@@ -12,6 +12,8 @@ namespace FitnessTracker
 {
     public partial class ActivityForm : Form
     {
+        Fitness_Tracker_DataSetTableAdapters.ActivitiesTableAdapter ata = new Fitness_Tracker_DataSetTableAdapters.ActivitiesTableAdapter();
+
         public ActivityForm()
         {
             InitializeComponent();
@@ -68,7 +70,56 @@ namespace FitnessTracker
 
         private void createActivitySubmitBtn_Click(object sender, EventArgs e)
         {
+            if(comboActivityType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please Select Activity Type", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (metric1.Text == "" || metric2.Text == "" || metric3.Text == "")
+            {
+                MessageBox.Show("Please Enter All Metric Values", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if (!activityTime.Checked)
+            {
+                MessageBox.Show("Please Enter Activity Time", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!activityDate.Checked)
+            {
+                MessageBox.Show("Please Enter Activity Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (activityDate.Value > DateTime.Now)
+            {
+                MessageBox.Show("Activity Date cannot be in the future", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Activity newActivity = new Activity();
+                newActivity.UserID = Session.UserID;
+                newActivity.ActivityType = (ActivityType) comboActivityType.SelectedItem;
+                newActivity.Metric1 = decimal.Parse(metric1.Text);
+                newActivity.Metric2 = decimal.Parse(metric2.Text);
+                newActivity.Metric3 = decimal.Parse(metric3.Text);
+                DateTime date = activityDate.Value.Date;
+                DateTime time = activityTime.Value;
+                newActivity.ActivityDateTime = date + time.TimeOfDay;
+                newActivity.BurnedCalories = this.CalculateBurnedCalories(newActivity.ActivityType, newActivity.Metric1, newActivity.Metric2, newActivity.Metric3);
+                try
+                {
+                    int data = ata.Insert(newActivity.UserID, newActivity.ActivityType.ToString(), newActivity.ActivityDateTime, newActivity.Metric1, newActivity.Metric2, newActivity.Metric3, newActivity.BurnedCalories);
 
+                    if (data > 0)
+                    {
+                        decimal burnedCalories = CalculateBurnedCalories(newActivity.ActivityType, newActivity.Metric1, newActivity.Metric2, newActivity.Metric3);
+                        MessageBox.Show($"Create Activity Successful! Burned Calories: {burnedCalories}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something Went Wrong!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private decimal CalculateBurnedCalories(ActivityType activityType, decimal Metric1, decimal Metric2, decimal Metric3)

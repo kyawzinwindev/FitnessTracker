@@ -1080,7 +1080,7 @@ namespace FitnessTracker {
             
             private global::System.Data.DataColumn columnactivityType;
             
-            private global::System.Data.DataColumn columnactivityDate;
+            private global::System.Data.DataColumn columnactivityDateTime;
             
             private global::System.Data.DataColumn columnmetric1;
             
@@ -1149,9 +1149,9 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn activityDateColumn {
+            public global::System.Data.DataColumn activityDateTimeColumn {
                 get {
-                    return this.columnactivityDate;
+                    return this.columnactivityDateTime;
                 }
             }
             
@@ -1224,13 +1224,13 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivitiesRow AddActivitiesRow(UsersRow parentUsersRowByFK__Activitie__userI__5CD6CB2B, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, decimal burnedCalories) {
+            public ActivitiesRow AddActivitiesRow(UsersRow parentUsersRowByFK__Activitie__userI__5CD6CB2B, string activityType, System.DateTime activityDateTime, decimal metric1, decimal metric2, decimal metric3, decimal burnedCalories) {
                 ActivitiesRow rowActivitiesRow = ((ActivitiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         activityType,
-                        activityDate,
+                        activityDateTime,
                         metric1,
                         metric2,
                         metric3,
@@ -1270,7 +1270,7 @@ namespace FitnessTracker {
                 this.columnactivityID = base.Columns["activityID"];
                 this.columnuserID = base.Columns["userID"];
                 this.columnactivityType = base.Columns["activityType"];
-                this.columnactivityDate = base.Columns["activityDate"];
+                this.columnactivityDateTime = base.Columns["activityDateTime"];
                 this.columnmetric1 = base.Columns["metric1"];
                 this.columnmetric2 = base.Columns["metric2"];
                 this.columnmetric3 = base.Columns["metric3"];
@@ -1286,13 +1286,13 @@ namespace FitnessTracker {
                 base.Columns.Add(this.columnuserID);
                 this.columnactivityType = new global::System.Data.DataColumn("activityType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactivityType);
-                this.columnactivityDate = new global::System.Data.DataColumn("activityDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnactivityDate);
-                this.columnmetric1 = new global::System.Data.DataColumn("metric1", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnactivityDateTime = new global::System.Data.DataColumn("activityDateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactivityDateTime);
+                this.columnmetric1 = new global::System.Data.DataColumn("metric1", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmetric1);
-                this.columnmetric2 = new global::System.Data.DataColumn("metric2", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnmetric2 = new global::System.Data.DataColumn("metric2", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmetric2);
-                this.columnmetric3 = new global::System.Data.DataColumn("metric3", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnmetric3 = new global::System.Data.DataColumn("metric3", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmetric3);
                 this.columnburnedCalories = new global::System.Data.DataColumn("burnedCalories", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnburnedCalories);
@@ -1307,13 +1307,10 @@ namespace FitnessTracker {
                 this.columnuserID.AllowDBNull = false;
                 this.columnactivityType.AllowDBNull = false;
                 this.columnactivityType.MaxLength = 50;
-                this.columnactivityDate.AllowDBNull = false;
+                this.columnactivityDateTime.AllowDBNull = false;
                 this.columnmetric1.AllowDBNull = false;
-                this.columnmetric1.MaxLength = 50;
                 this.columnmetric2.AllowDBNull = false;
-                this.columnmetric2.MaxLength = 50;
                 this.columnmetric3.AllowDBNull = false;
-                this.columnmetric3.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1706,20 +1703,20 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime activityDate {
+            public System.DateTime activityDateTime {
                 get {
-                    return ((global::System.DateTime)(this[this.tableActivities.activityDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableActivities.activityDateTimeColumn]));
                 }
                 set {
-                    this[this.tableActivities.activityDateColumn] = value;
+                    this[this.tableActivities.activityDateTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string metric1 {
+            public decimal metric1 {
                 get {
-                    return ((string)(this[this.tableActivities.metric1Column]));
+                    return ((decimal)(this[this.tableActivities.metric1Column]));
                 }
                 set {
                     this[this.tableActivities.metric1Column] = value;
@@ -1728,9 +1725,9 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string metric2 {
+            public decimal metric2 {
                 get {
-                    return ((string)(this[this.tableActivities.metric2Column]));
+                    return ((decimal)(this[this.tableActivities.metric2Column]));
                 }
                 set {
                     this[this.tableActivities.metric2Column] = value;
@@ -1739,9 +1736,9 @@ namespace FitnessTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string metric3 {
+            public decimal metric3 {
                 get {
-                    return ((string)(this[this.tableActivities.metric3Column]));
+                    return ((decimal)(this[this.tableActivities.metric3Column]));
                 }
                 set {
                     this[this.tableActivities.metric3Column] = value;
@@ -2819,7 +2816,7 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
             tableMapping.ColumnMappings.Add("activityID", "activityID");
             tableMapping.ColumnMappings.Add("userID", "userID");
             tableMapping.ColumnMappings.Add("activityType", "activityType");
-            tableMapping.ColumnMappings.Add("activityDate", "activityDate");
+            tableMapping.ColumnMappings.Add("activityDateTime", "activityDateTime");
             tableMapping.ColumnMappings.Add("metric1", "metric1");
             tableMapping.ColumnMappings.Add("metric2", "metric2");
             tableMapping.ColumnMappings.Add("metric3", "metric3");
@@ -2827,48 +2824,48 @@ SELECT goalID, userID, targetCalories, startDate, endDate, isGoalAchieved FROM G
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Activities] WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDate] = @Original_activityDate) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Activities] WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDateTime] = @Original_activityDateTime) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityDateTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric3", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_burnedCalories", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "burnedCalories", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([userID], [activityType], [activityDate], [metric1], [metric2], [metric3], [burnedCalories]) VALUES (@userID, @activityType, @activityDate, @metric1, @metric2, @metric3, @burnedCalories);
-SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([userID], [activityType], [activityDateTime], [metric1], [metric2], [metric3], [burnedCalories]) VALUES (@userID, @activityType, @activityDateTime, @metric1, @metric2, @metric3, @burnedCalories);
+SELECT activityID, userID, activityType, activityDateTime, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDateTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric3", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [userID] = @userID, [activityType] = @activityType, [activityDate] = @activityDate, [metric1] = @metric1, [metric2] = @metric2, [metric3] = @metric3, [burnedCalories] = @burnedCalories WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDate] = @Original_activityDate) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)));
-SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = @activityID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [userID] = @userID, [activityType] = @activityType, [activityDateTime] = @activityDateTime, [metric1] = @metric1, [metric2] = @metric2, [metric3] = @metric3, [burnedCalories] = @burnedCalories WHERE (([activityID] = @Original_activityID) AND ([userID] = @Original_userID) AND ([activityType] = @Original_activityType) AND ([activityDateTime] = @Original_activityDateTime) AND ([metric1] = @Original_metric1) AND ([metric2] = @Original_metric2) AND ([metric3] = @Original_metric3) AND ((@IsNull_burnedCalories = 1 AND [burnedCalories] IS NULL) OR ([burnedCalories] = @Original_burnedCalories)));
+SELECT activityID, userID, activityType, activityDateTime, metric1, metric2, metric3, burnedCalories FROM Activities WHERE (activityID = @activityID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityDateTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@metric3", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "metric3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_activityDateTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "activityDateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric1", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric2", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_metric3", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "metric3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_burnedCalories", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "burnedCalories", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_burnedCalories", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "burnedCalories", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "activityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2948,7 +2945,7 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_activityID, int Original_userID, string Original_activityType, System.DateTime Original_activityDate, string Original_metric1, string Original_metric2, string Original_metric3, global::System.Nullable<decimal> Original_burnedCalories) {
+        public virtual int Delete(int Original_activityID, int Original_userID, string Original_activityType, System.DateTime Original_activityDateTime, decimal Original_metric1, decimal Original_metric2, decimal Original_metric3, global::System.Nullable<decimal> Original_burnedCalories) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_activityID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_userID));
             if ((Original_activityType == null)) {
@@ -2957,25 +2954,10 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_activityType));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_activityDate));
-            if ((Original_metric1 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric1");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_metric1));
-            }
-            if ((Original_metric2 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric2");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_metric2));
-            }
-            if ((Original_metric3 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric3");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_metric3));
-            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_activityDateTime));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_metric1));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_metric2));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_metric3));
             if ((Original_burnedCalories.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_burnedCalories.Value));
@@ -3004,7 +2986,7 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int userID, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, global::System.Nullable<decimal> burnedCalories) {
+        public virtual int Insert(int userID, string activityType, System.DateTime activityDateTime, decimal metric1, decimal metric2, decimal metric3, global::System.Nullable<decimal> burnedCalories) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(userID));
             if ((activityType == null)) {
                 throw new global::System.ArgumentNullException("activityType");
@@ -3012,25 +2994,10 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(activityType));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(activityDate));
-            if ((metric1 == null)) {
-                throw new global::System.ArgumentNullException("metric1");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(metric1));
-            }
-            if ((metric2 == null)) {
-                throw new global::System.ArgumentNullException("metric2");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(metric2));
-            }
-            if ((metric3 == null)) {
-                throw new global::System.ArgumentNullException("metric3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(metric3));
-            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(activityDateTime));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(metric1));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(metric2));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(metric3));
             if ((burnedCalories.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(burnedCalories.Value));
             }
@@ -3060,18 +3027,18 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         public virtual int Update(
                     int userID, 
                     string activityType, 
-                    System.DateTime activityDate, 
-                    string metric1, 
-                    string metric2, 
-                    string metric3, 
+                    System.DateTime activityDateTime, 
+                    decimal metric1, 
+                    decimal metric2, 
+                    decimal metric3, 
                     global::System.Nullable<decimal> burnedCalories, 
                     int Original_activityID, 
                     int Original_userID, 
                     string Original_activityType, 
-                    System.DateTime Original_activityDate, 
-                    string Original_metric1, 
-                    string Original_metric2, 
-                    string Original_metric3, 
+                    System.DateTime Original_activityDateTime, 
+                    decimal Original_metric1, 
+                    decimal Original_metric2, 
+                    decimal Original_metric3, 
                     global::System.Nullable<decimal> Original_burnedCalories, 
                     int activityID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(userID));
@@ -3081,25 +3048,10 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(activityType));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(activityDate));
-            if ((metric1 == null)) {
-                throw new global::System.ArgumentNullException("metric1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(metric1));
-            }
-            if ((metric2 == null)) {
-                throw new global::System.ArgumentNullException("metric2");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(metric2));
-            }
-            if ((metric3 == null)) {
-                throw new global::System.ArgumentNullException("metric3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(metric3));
-            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(activityDateTime));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(metric1));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(metric2));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(metric3));
             if ((burnedCalories.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(burnedCalories.Value));
             }
@@ -3114,25 +3066,10 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_activityType));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_activityDate));
-            if ((Original_metric1 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_metric1));
-            }
-            if ((Original_metric2 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric2");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_metric2));
-            }
-            if ((Original_metric3 == null)) {
-                throw new global::System.ArgumentNullException("Original_metric3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_metric3));
-            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_activityDateTime));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_metric1));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_metric2));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_metric3));
             if ((Original_burnedCalories.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(Original_burnedCalories.Value));
@@ -3162,8 +3099,8 @@ SELECT activityID, userID, activityType, activityDate, metric1, metric2, metric3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int userID, string activityType, System.DateTime activityDate, string metric1, string metric2, string metric3, global::System.Nullable<decimal> burnedCalories, int Original_activityID, int Original_userID, string Original_activityType, System.DateTime Original_activityDate, string Original_metric1, string Original_metric2, string Original_metric3, global::System.Nullable<decimal> Original_burnedCalories) {
-            return this.Update(userID, activityType, activityDate, metric1, metric2, metric3, burnedCalories, Original_activityID, Original_userID, Original_activityType, Original_activityDate, Original_metric1, Original_metric2, Original_metric3, Original_burnedCalories, Original_activityID);
+        public virtual int Update(int userID, string activityType, System.DateTime activityDateTime, decimal metric1, decimal metric2, decimal metric3, global::System.Nullable<decimal> burnedCalories, int Original_activityID, int Original_userID, string Original_activityType, System.DateTime Original_activityDateTime, decimal Original_metric1, decimal Original_metric2, decimal Original_metric3, global::System.Nullable<decimal> Original_burnedCalories) {
+            return this.Update(userID, activityType, activityDateTime, metric1, metric2, metric3, burnedCalories, Original_activityID, Original_userID, Original_activityType, Original_activityDateTime, Original_metric1, Original_metric2, Original_metric3, Original_burnedCalories, Original_activityID);
         }
     }
     

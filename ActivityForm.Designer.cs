@@ -33,10 +33,14 @@
             this.metric1lbl = new System.Windows.Forms.Label();
             this.metric2lbl = new System.Windows.Forms.Label();
             this.metric3lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.metric1 = new System.Windows.Forms.TextBox();
+            this.metric2 = new System.Windows.Forms.TextBox();
+            this.metric3 = new System.Windows.Forms.TextBox();
             this.createActivitySubmitBtn = new System.Windows.Forms.Button();
+            this.activityTime = new System.Windows.Forms.DateTimePicker();
+            this.time = new System.Windows.Forms.Label();
+            this.date = new System.Windows.Forms.Label();
+            this.activityDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // comboActivityType
@@ -84,30 +88,30 @@
             this.metric3lbl.TabIndex = 4;
             this.metric3lbl.Text = "label2";
             // 
-            // textBox1
+            // metric1
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 20);
-            this.textBox1.TabIndex = 5;
+            this.metric1.Location = new System.Drawing.Point(161, 90);
+            this.metric1.Name = "metric1";
+            this.metric1.Size = new System.Drawing.Size(191, 20);
+            this.metric1.TabIndex = 5;
             // 
-            // textBox2
+            // metric2
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 145);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(191, 20);
-            this.textBox2.TabIndex = 6;
+            this.metric2.Location = new System.Drawing.Point(161, 145);
+            this.metric2.Name = "metric2";
+            this.metric2.Size = new System.Drawing.Size(191, 20);
+            this.metric2.TabIndex = 6;
             // 
-            // textBox3
+            // metric3
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 203);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 20);
-            this.textBox3.TabIndex = 7;
+            this.metric3.Location = new System.Drawing.Point(161, 203);
+            this.metric3.Name = "metric3";
+            this.metric3.Size = new System.Drawing.Size(191, 20);
+            this.metric3.TabIndex = 7;
             // 
             // createActivitySubmitBtn
             // 
-            this.createActivitySubmitBtn.Location = new System.Drawing.Point(161, 268);
+            this.createActivitySubmitBtn.Location = new System.Drawing.Point(161, 359);
             this.createActivitySubmitBtn.Name = "createActivitySubmitBtn";
             this.createActivitySubmitBtn.Size = new System.Drawing.Size(75, 23);
             this.createActivitySubmitBtn.TabIndex = 8;
@@ -115,15 +119,54 @@
             this.createActivitySubmitBtn.UseVisualStyleBackColor = true;
             this.createActivitySubmitBtn.Click += new System.EventHandler(this.createActivitySubmitBtn_Click);
             // 
+            // activityTime
+            // 
+            this.activityTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.activityTime.Location = new System.Drawing.Point(161, 256);
+            this.activityTime.Name = "activityTime";
+            this.activityTime.ShowUpDown = true;
+            this.activityTime.Size = new System.Drawing.Size(191, 20);
+            this.activityTime.TabIndex = 9;
+            // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(41, 256);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(67, 13);
+            this.time.TabIndex = 10;
+            this.time.Text = "Activity Time";
+            // 
+            // date
+            // 
+            this.date.AutoSize = true;
+            this.date.Location = new System.Drawing.Point(41, 302);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(67, 13);
+            this.date.TabIndex = 11;
+            this.date.Text = "Activity Date";
+            // 
+            // activityDate
+            // 
+            this.activityDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.activityDate.Location = new System.Drawing.Point(161, 302);
+            this.activityDate.Name = "activityDate";
+            this.activityDate.Size = new System.Drawing.Size(191, 20);
+            this.activityDate.TabIndex = 12;
+            // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 317);
+            this.ClientSize = new System.Drawing.Size(398, 394);
+            this.Controls.Add(this.activityDate);
+            this.Controls.Add(this.date);
+            this.Controls.Add(this.time);
+            this.Controls.Add(this.activityTime);
             this.Controls.Add(this.createActivitySubmitBtn);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.metric3);
+            this.Controls.Add(this.metric2);
+            this.Controls.Add(this.metric1);
             this.Controls.Add(this.metric3lbl);
             this.Controls.Add(this.metric2lbl);
             this.Controls.Add(this.metric1lbl);
@@ -145,9 +188,13 @@
         private System.Windows.Forms.Label metric1lbl;
         private System.Windows.Forms.Label metric2lbl;
         private System.Windows.Forms.Label metric3lbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox metric1;
+        private System.Windows.Forms.TextBox metric2;
+        private System.Windows.Forms.TextBox metric3;
         private System.Windows.Forms.Button createActivitySubmitBtn;
+        private System.Windows.Forms.DateTimePicker activityTime;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Label date;
+        private System.Windows.Forms.DateTimePicker activityDate;
     }
 }

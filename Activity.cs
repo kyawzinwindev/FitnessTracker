@@ -10,9 +10,9 @@ namespace FitnessTracker
     {
         protected int userID;
         protected ActivityType activityType;
-        protected DateTime activityDate;
-        protected string metric1, metric2, metric3;
-        protected double burnedCalories;
+        protected DateTime activityDateTime;
+        protected decimal metric1, metric2, metric3;
+        protected decimal burnedCalories;
 
         public int UserID
         {
@@ -26,31 +26,31 @@ namespace FitnessTracker
             set { activityType = value; }
         }
 
-        public DateTime ActivityDate
+        public DateTime ActivityDateTime
         {
-            get { return activityDate; }
-            set { activityDate = value; }
+            get { return activityDateTime; }
+            set { activityDateTime = value; }
         }
 
-        public string Metric1
+        public decimal Metric1
         {
             get { return metric1; }
             set { metric1 = value; }
         }
 
-        public string Metric2
+        public decimal Metric2
         {
             get { return metric2; }
             set { metric2 = value; }
         }
 
-        public string Metric3
+        public decimal Metric3
         {
             get { return metric3; }
             set { metric3 = value; }
         }
 
-        public double BurnedCalories
+        public decimal BurnedCalories
         {
             get { return burnedCalories; }
             set { burnedCalories = value; }
