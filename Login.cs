@@ -15,6 +15,7 @@ namespace FitnessTracker
         Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter uds = new Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter();
 
         public event EventHandler SignUpLinkClicked;
+        public event EventHandler LoginSuccessful;
         public Login()
         {
             InitializeComponent();
@@ -38,8 +39,7 @@ namespace FitnessTracker
 
                     MessageBox.Show("You have been logged in successfully.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //this.DialogResult = DialogResult.OK;
-                    //this.Close();
+                    LoginSuccessful?.Invoke(this, EventArgs.Empty);
                 }
                 else
                 {

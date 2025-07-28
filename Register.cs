@@ -18,6 +18,7 @@ namespace FitnessTracker
         Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter uds = new Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter();
 
         public event EventHandler BackToLoginClicked;
+        public event EventHandler RegistrationSuccessful;
 
         public Register()
         {
@@ -83,10 +84,8 @@ namespace FitnessTracker
                     if (data > 0)
                     {
                         MessageBox.Show("Registration Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //this.Close();
 
-                        //LoginForm loginForm = new LoginForm();
-                        //loginForm.Show();
+                        RegistrationSuccessful?.Invoke(this, EventArgs.Empty);
                     }
                     else
                     {

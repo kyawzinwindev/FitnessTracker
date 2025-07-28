@@ -24,20 +24,20 @@ namespace FitnessTracker
             loginComponent.Top = (this.ClientSize.Height - loginComponent.Height) / 2;
             loginComponent.SignUpLinkClicked += ShowRegisterComponent;
 
-           
             this.Controls.Add(loginComponent);
 
             registerComponent = new Register();
-            registerComponent.Anchor = AnchorStyles.None;
-            registerComponent.Left = (this.ClientSize.Width - registerComponent.Width) / 2;
-            registerComponent.Top = (this.ClientSize.Height - registerComponent.Height) / 2;
             registerComponent.BackToLoginClicked += ShowLoginComponent;
+            registerComponent.RegistrationSuccessful += ShowLoginComponent;
 
         }
 
         private void ShowRegisterComponent(object sender, EventArgs e)
         {
             this.Controls.Remove(loginComponent);
+            registerComponent.Anchor = AnchorStyles.None;
+            registerComponent.Left = (this.ClientSize.Width - registerComponent.Width) / 2;
+            registerComponent.Top = (this.ClientSize.Height - registerComponent.Height) / 2;
             this.Controls.Add(registerComponent);
         }
 
