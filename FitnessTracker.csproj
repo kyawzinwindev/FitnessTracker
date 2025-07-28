@@ -73,6 +73,12 @@
     <Compile Include="GoalForm.Designer.cs">
       <DependentUpon>GoalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>UserControl</SubType>
     </Compile>

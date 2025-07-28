@@ -23,6 +23,7 @@ namespace FitnessTracker
             loginComponent.Left = (this.ClientSize.Width - loginComponent.Width) / 2;
             loginComponent.Top = (this.ClientSize.Height - loginComponent.Height) / 2;
             loginComponent.SignUpLinkClicked += ShowRegisterComponent;
+            loginComponent.LoginSuccessful += AfterLoginSuccessful;
 
             this.Controls.Add(loginComponent);
 
@@ -45,6 +46,14 @@ namespace FitnessTracker
         {
             this.Controls.Remove(registerComponent);
             this.Controls.Add(loginComponent);
+        }
+
+        private void AfterLoginSuccessful(object sender, EventArgs e)
+        {
+            this.Controls.Remove(registerComponent);
+            this.Controls.Remove(loginComponent);
+            HomeForm homeForm = new HomeForm();
+            homeForm.ShowDialog();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
