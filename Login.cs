@@ -32,10 +32,11 @@ namespace FitnessTracker
 
             if (user.Rows.Count > 0)
             {
-                var password = user.Rows[0]["Password"].ToString();
+                var fullname = user.Rows[0]["name"].ToString();
+                var password = user.Rows[0]["password"].ToString();
                 if (password == txtPassword.Text)
                 {
-                    Session.Login(Convert.ToInt32(user.Rows[0]["UserID"]), txtUsername.Text);
+                    Session.Login(Convert.ToInt32(user.Rows[0]["userID"]), txtUsername.Text, fullname);
 
                     MessageBox.Show("You have been logged in successfully.", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

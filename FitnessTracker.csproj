@@ -107,6 +107,9 @@
     <EmbeddedResource Include="GoalForm.resx">
       <DependentUpon>GoalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

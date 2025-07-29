@@ -50,10 +50,10 @@ namespace FitnessTracker
 
         private void AfterLoginSuccessful(object sender, EventArgs e)
         {
-            this.Controls.Remove(registerComponent);
-            this.Controls.Remove(loginComponent);
             HomeForm homeForm = new HomeForm();
             homeForm.ShowDialog();
+
+            this.Close();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
