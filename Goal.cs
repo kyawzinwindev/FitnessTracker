@@ -9,14 +9,20 @@ namespace FitnessTracker
     internal class Goal
     {
         protected int userID;
+        protected string title;
         protected decimal targetCalories;
         protected DateTime startDate, endDate;
-        protected bool isGoalAchieved;
 
         public int UserID
         {
             get { return userID; }
             set { userID = value; }
+        }
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
         }
 
         public decimal TargetCalories
@@ -35,12 +41,6 @@ namespace FitnessTracker
         {
             get { return endDate; }
             set { endDate = value; }
-        }
-
-        public bool IsGoalAchieved
-        {
-            get { return isGoalAchieved; }
-            set { isGoalAchieved = value; }
         }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="ActivityForm.Designer.cs">
       <DependentUpon>ActivityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ActivityRecord.cs" />
     <Compile Include="ActivityType.cs" />
     <Compile Include="Fitness_Tracker_DataSet.cs">
       <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
@@ -67,11 +68,11 @@
     </Compile>
     <Compile Include="Gender.cs" />
     <Compile Include="Goal.cs" />
-    <Compile Include="GoalForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="GoalUserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GoalForm.Designer.cs">
-      <DependentUpon>GoalForm.cs</DependentUpon>
+    <Compile Include="GoalUserControl.Designer.cs">
+      <DependentUpon>GoalUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +105,8 @@
     <EmbeddedResource Include="ActivityForm.resx">
       <DependentUpon>ActivityForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GoalForm.resx">
-      <DependentUpon>GoalForm.cs</DependentUpon>
+    <EmbeddedResource Include="GoalUserControl.resx">
+      <DependentUpon>GoalUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>

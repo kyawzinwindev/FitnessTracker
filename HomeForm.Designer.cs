@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.tableMain = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.logoutBtn = new System.Windows.Forms.Button();
-            this.todayDateLabel = new System.Windows.Forms.Label();
-            this.welcomeNameLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.goalPageBtn = new System.Windows.Forms.Button();
             this.activityRecordPageBtn = new System.Windows.Forms.Button();
             this.profilePageBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
+            this.todayDateLabel = new System.Windows.Forms.Label();
+            this.welcomeNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tableMain.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableMain
@@ -62,6 +62,44 @@
             this.tableMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableMain.Size = new System.Drawing.Size(800, 450);
             this.tableMain.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.goalPageBtn);
+            this.flowLayoutPanel1.Controls.Add(this.activityRecordPageBtn);
+            this.flowLayoutPanel1.Controls.Add(this.profilePageBtn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 77);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(440, 54);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // goalPageBtn
+            // 
+            this.goalPageBtn.Location = new System.Drawing.Point(3, 3);
+            this.goalPageBtn.Name = "goalPageBtn";
+            this.goalPageBtn.Size = new System.Drawing.Size(120, 40);
+            this.goalPageBtn.TabIndex = 0;
+            this.goalPageBtn.Text = "Goal";
+            this.goalPageBtn.UseVisualStyleBackColor = true;
+            this.goalPageBtn.Click += new System.EventHandler(this.goalPageBtn_Click);
+            // 
+            // activityRecordPageBtn
+            // 
+            this.activityRecordPageBtn.Location = new System.Drawing.Point(129, 3);
+            this.activityRecordPageBtn.Name = "activityRecordPageBtn";
+            this.activityRecordPageBtn.Size = new System.Drawing.Size(120, 40);
+            this.activityRecordPageBtn.TabIndex = 1;
+            this.activityRecordPageBtn.Text = "ActivityRecord";
+            this.activityRecordPageBtn.UseVisualStyleBackColor = true;
+            // 
+            // profilePageBtn
+            // 
+            this.profilePageBtn.Location = new System.Drawing.Point(255, 3);
+            this.profilePageBtn.Name = "profilePageBtn";
+            this.profilePageBtn.Size = new System.Drawing.Size(120, 40);
+            this.profilePageBtn.TabIndex = 2;
+            this.profilePageBtn.Text = "Profile";
+            this.profilePageBtn.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -106,43 +144,6 @@
             this.welcomeNameLabel.TabIndex = 0;
             this.welcomeNameLabel.Text = "label1";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.goalPageBtn);
-            this.flowLayoutPanel1.Controls.Add(this.activityRecordPageBtn);
-            this.flowLayoutPanel1.Controls.Add(this.profilePageBtn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 77);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(440, 54);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // goalPageBtn
-            // 
-            this.goalPageBtn.Location = new System.Drawing.Point(3, 3);
-            this.goalPageBtn.Name = "goalPageBtn";
-            this.goalPageBtn.Size = new System.Drawing.Size(120, 40);
-            this.goalPageBtn.TabIndex = 0;
-            this.goalPageBtn.Text = "Goal";
-            this.goalPageBtn.UseVisualStyleBackColor = true;
-            // 
-            // activityRecordPageBtn
-            // 
-            this.activityRecordPageBtn.Location = new System.Drawing.Point(129, 3);
-            this.activityRecordPageBtn.Name = "activityRecordPageBtn";
-            this.activityRecordPageBtn.Size = new System.Drawing.Size(120, 40);
-            this.activityRecordPageBtn.TabIndex = 1;
-            this.activityRecordPageBtn.Text = "ActivityRecord";
-            this.activityRecordPageBtn.UseVisualStyleBackColor = true;
-            // 
-            // profilePageBtn
-            // 
-            this.profilePageBtn.Location = new System.Drawing.Point(255, 3);
-            this.profilePageBtn.Name = "profilePageBtn";
-            this.profilePageBtn.Size = new System.Drawing.Size(120, 40);
-            this.profilePageBtn.TabIndex = 2;
-            this.profilePageBtn.Text = "Profile";
-            this.profilePageBtn.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -175,9 +176,9 @@
             this.Load += new System.EventHandler(this.HomeForm_Load);
             this.tableMain.ResumeLayout(false);
             this.tableMain.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

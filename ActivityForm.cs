@@ -12,7 +12,7 @@ namespace FitnessTracker
 {
     public partial class ActivityForm : Form
     {
-        Fitness_Tracker_DataSetTableAdapters.ActivitiesTableAdapter ata = new Fitness_Tracker_DataSetTableAdapters.ActivitiesTableAdapter();
+        Fitness_Tracker_DataSetTableAdapters.ActivityRecordsTableAdapter ata = new Fitness_Tracker_DataSetTableAdapters.ActivityRecordsTableAdapter();
 
         public ActivityForm()
         {

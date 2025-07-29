@@ -12,7 +12,6 @@ namespace FitnessTracker
 {
     public partial class HomeForm : Form
     {
-        Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter uta = new Fitness_Tracker_DataSetTableAdapters.UsersTableAdapter();
         public HomeForm()
         {
             InitializeComponent();
@@ -23,6 +22,11 @@ namespace FitnessTracker
             var username = Session.UserFullName;
             welcomeNameLabel.Text = "Welcome, " + username + "!";
             todayDateLabel.Text = "Today is: " + DateTime.Now.ToString("D");
+
+            panelMain.Controls.Clear();
+            GoalUserControl goalUserControl = new GoalUserControl();
+            goalUserControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(goalUserControl);
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -34,6 +38,14 @@ namespace FitnessTracker
             mainForm.ShowDialog();
 
             this.Close();
+        }
+
+        private void goalPageBtn_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            GoalUserControl goalUserControl = new GoalUserControl();
+            goalUserControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(goalUserControl);
         }
     }
 }
