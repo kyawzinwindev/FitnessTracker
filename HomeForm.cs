@@ -23,10 +23,7 @@ namespace FitnessTracker
             welcomeNameLabel.Text = "Welcome, " + username + "!";
             todayDateLabel.Text = "Today is: " + DateTime.Now.ToString("D");
 
-            panelMain.Controls.Clear();
-            GoalUserControl goalUserControl = new GoalUserControl();
-            goalUserControl.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(goalUserControl);
+            this.goalPageBtn_Click(sender, e);
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -46,6 +43,7 @@ namespace FitnessTracker
             GoalUserControl goalUserControl = new GoalUserControl();
             goalUserControl.Dock = DockStyle.Fill;
             panelMain.Controls.Add(goalUserControl);
+            goalUserControl.LoadGoals();
         }
     }
 }

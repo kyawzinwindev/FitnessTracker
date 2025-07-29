@@ -72,7 +72,7 @@ namespace FitnessTracker
             }
         }
 
-        private void LoadGoals()
+        public void LoadGoals()
         {
             try
             {
