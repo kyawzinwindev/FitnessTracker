@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace FitnessTracker
             InitializeComponent();
         }
 
-        private void createGoalBtn_Click(object sender, EventArgs e)
+        private void saveGoalBtn_Click(object sender, EventArgs e)
         {
             if (txtTitle.Text == "")
             {
@@ -51,23 +52,57 @@ namespace FitnessTracker
                 newGoal.StartDate = startDate.Value;
                 newGoal.EndDate = endDate.Value;
 
-                try
+                if(saveGoalBtn.Tag == null)
                 {
-                    int data = gta.Insert(newGoal.UserID, newGoal.Title, newGoal.TargetCalories, newGoal.StartDate, newGoal.EndDate);
+                    try
+                    {
+                        int data = gta.Insert(newGoal.UserID, newGoal.Title, newGoal.TargetCalories, newGoal.StartDate, newGoal.EndDate);
 
-                    if (data > 0)
-                    {
-                        MessageBox.Show("Create Goal Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.LoadGoals();
+                        if (data > 0)
+                        {
+                            MessageBox.Show("Create Goal Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.ClearGoalForm();
+                            this.LoadGoals();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something Went Wrong!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Something Went Wrong!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Something Went Wrong!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    var table = gta.GetData();
+                    var goalId = Convert.ToInt32(saveGoalBtn.Tag);
+
+                    var row = table.FirstOrDefault(r => r.goalID == goalId); 
+
+                    if (row != null)
+                    {
+                        row["Title"] = txtTitle.Text;
+                        row["TargetCalories"] = Convert.ToInt32(txtTargetCalories.Text);
+                        row["StartDate"] = startDate.Value;
+                        row["EndDate"] = endDate.Value;
+
+                        int data = gta.Update(row); 
+
+                        if (data > 0)
+                        {
+                            MessageBox.Show("Update Goal Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.ClearGoalForm();
+                            this.LoadGoals();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Something Went Wrong!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+
                 }
             }
         }
@@ -101,6 +136,8 @@ namespace FitnessTracker
                     return new
                     {
                         Title = goalRow["Title"].ToString(),
+                        Start = Convert.ToDateTime(goalRow["StartDate"]).Date,
+                        End = Convert.ToDateTime(goalRow["EndDate"]).Date,
                         Target = target,
                         Burned = totalBurned,
                         Achieved = $"{achieved:F1}%",
@@ -112,10 +149,14 @@ namespace FitnessTracker
                 dgvGoals.DataSource = displayData;
                 dgvGoals.Columns["ID"].Visible = false;
 
+                dgvGoals.Columns["Start"].HeaderText = "Start Date";
+                dgvGoals.Columns["End"].HeaderText = "End Date";
                 dgvGoals.Columns["Target"].HeaderText = "Target Calories";
                 dgvGoals.Columns["Burned"].HeaderText = "Burned Calories";
                 dgvGoals.Columns["Achieved"].HeaderText = "Achieved %";
                 dgvGoals.Columns["Status"].HeaderText = "Status";
+
+                this.ClearGoalForm();
             }
             catch (Exception ex)
             {
@@ -125,5 +166,60 @@ namespace FitnessTracker
             
         }
 
+        private void dgvGoals_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvGoals.Rows[e.RowIndex];
+
+                txtTitle.Text = row.Cells["Title"].Value.ToString();
+                txtTargetCalories.Text = row.Cells["Target"].Value.ToString();
+                startDate.Value = Convert.ToDateTime(row.Cells["Start"].Value);
+                endDate.Value = Convert.ToDateTime(row.Cells["End"].Value);
+
+
+               saveGoalBtn.Tag = row.Cells["ID"].Value;
+               deleteGoalBtn.Tag = row.Cells["ID"].Value;
+
+                labelGoalHeading.Text = "Update Goal";
+                saveGoalBtn.Text = "Update";
+                deleteGoalBtn.Enabled = true;
+            }
+        }
+
+        private void ClearGoalForm()
+        {
+            txtTitle.Clear();
+            txtTargetCalories.Clear();
+            startDate.Value = DateTime.Today;
+            endDate.Value = DateTime.Today;
+
+            saveGoalBtn.Tag = null;
+            deleteGoalBtn.Tag = null;
+
+            labelGoalHeading.Text = "Create New Goal";
+            saveGoalBtn.Text = "Save";
+            deleteGoalBtn.Enabled = false;
+        }
+
+        private void deleteGoalBtn_Click(object sender, EventArgs e)
+        {
+            var table = gta.GetData();
+            int goalId = Convert.ToInt32(deleteGoalBtn.Tag);
+            var row = table.FirstOrDefault(r => r.goalID == goalId);
+
+            if(row != null)
+            {
+                gta.DeleteGoal(goalId, Session.UserID);
+
+                this.ClearGoalForm();
+                this.LoadGoals();
+            }
+        }
+
+        private void clearGoalBtn_Click(object sender, EventArgs e)
+        {
+            this.ClearGoalForm();
+        }
     }
 }

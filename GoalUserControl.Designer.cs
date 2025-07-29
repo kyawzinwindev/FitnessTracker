@@ -33,9 +33,8 @@
             this.panelGoalForm = new System.Windows.Forms.Panel();
             this.clearGoalBtn = new System.Windows.Forms.Button();
             this.deleteGoalBtn = new System.Windows.Forms.Button();
-            this.updateGoalBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.createGoalBtn = new System.Windows.Forms.Button();
+            this.saveGoalBtn = new System.Windows.Forms.Button();
             this.endDate = new System.Windows.Forms.DateTimePicker();
             this.txtTargetCalories = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.dgvGoals.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGoals.Size = new System.Drawing.Size(597, 73);
             this.dgvGoals.TabIndex = 16;
+            this.dgvGoals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGoals_CellClick);
             // 
             // panelGoalForm
             // 
@@ -83,9 +83,8 @@
             this.panelGoalForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelGoalForm.Controls.Add(this.clearGoalBtn);
             this.panelGoalForm.Controls.Add(this.deleteGoalBtn);
-            this.panelGoalForm.Controls.Add(this.updateGoalBtn);
             this.panelGoalForm.Controls.Add(this.label5);
-            this.panelGoalForm.Controls.Add(this.createGoalBtn);
+            this.panelGoalForm.Controls.Add(this.saveGoalBtn);
             this.panelGoalForm.Controls.Add(this.endDate);
             this.panelGoalForm.Controls.Add(this.txtTargetCalories);
             this.panelGoalForm.Controls.Add(this.label4);
@@ -102,30 +101,23 @@
             // 
             // clearGoalBtn
             // 
-            this.clearGoalBtn.Location = new System.Drawing.Point(354, 300);
+            this.clearGoalBtn.Location = new System.Drawing.Point(316, 300);
             this.clearGoalBtn.Name = "clearGoalBtn";
             this.clearGoalBtn.Size = new System.Drawing.Size(80, 28);
             this.clearGoalBtn.TabIndex = 18;
             this.clearGoalBtn.Text = "Clear";
             this.clearGoalBtn.UseVisualStyleBackColor = true;
+            this.clearGoalBtn.Click += new System.EventHandler(this.clearGoalBtn_Click);
             // 
             // deleteGoalBtn
             // 
-            this.deleteGoalBtn.Location = new System.Drawing.Point(252, 300);
+            this.deleteGoalBtn.Location = new System.Drawing.Point(197, 300);
             this.deleteGoalBtn.Name = "deleteGoalBtn";
             this.deleteGoalBtn.Size = new System.Drawing.Size(80, 28);
             this.deleteGoalBtn.TabIndex = 17;
             this.deleteGoalBtn.Text = "Delete";
             this.deleteGoalBtn.UseVisualStyleBackColor = true;
-            // 
-            // updateGoalBtn
-            // 
-            this.updateGoalBtn.Location = new System.Drawing.Point(141, 300);
-            this.updateGoalBtn.Name = "updateGoalBtn";
-            this.updateGoalBtn.Size = new System.Drawing.Size(80, 28);
-            this.updateGoalBtn.TabIndex = 16;
-            this.updateGoalBtn.Text = "Update";
-            this.updateGoalBtn.UseVisualStyleBackColor = true;
+            this.deleteGoalBtn.Click += new System.EventHandler(this.deleteGoalBtn_Click);
             // 
             // label5
             // 
@@ -136,15 +128,15 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "End Date";
             // 
-            // createGoalBtn
+            // saveGoalBtn
             // 
-            this.createGoalBtn.Location = new System.Drawing.Point(35, 300);
-            this.createGoalBtn.Name = "createGoalBtn";
-            this.createGoalBtn.Size = new System.Drawing.Size(80, 28);
-            this.createGoalBtn.TabIndex = 15;
-            this.createGoalBtn.Text = "Create";
-            this.createGoalBtn.UseVisualStyleBackColor = true;
-            this.createGoalBtn.Click += new System.EventHandler(this.createGoalBtn_Click);
+            this.saveGoalBtn.Location = new System.Drawing.Point(80, 300);
+            this.saveGoalBtn.Name = "saveGoalBtn";
+            this.saveGoalBtn.Size = new System.Drawing.Size(80, 28);
+            this.saveGoalBtn.TabIndex = 15;
+            this.saveGoalBtn.Text = "Save";
+            this.saveGoalBtn.UseVisualStyleBackColor = true;
+            this.saveGoalBtn.Click += new System.EventHandler(this.saveGoalBtn_Click);
             // 
             // endDate
             // 
@@ -242,11 +234,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.DateTimePicker endDate;
-        private System.Windows.Forms.Button createGoalBtn;
+        private System.Windows.Forms.Button saveGoalBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvGoals;
         private System.Windows.Forms.Button clearGoalBtn;
         private System.Windows.Forms.Button deleteGoalBtn;
-        private System.Windows.Forms.Button updateGoalBtn;
     }
 }
