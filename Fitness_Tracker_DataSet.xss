@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:Users" ZOrder="5" X="543" Y="103" Height="248" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Goals" ZOrder="4" X="940" Y="219" Height="210" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:ActivityRecords" ZOrder="2" X="185" Y="197" Height="229" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:ActivityRecords" ZOrder="2" X="185" Y="197" Height="248" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK__Goals__userID__6FE99F9F" ZOrder="3" LineWidth="11">
@@ -30,7 +30,7 @@
           <Y>259</Y>
         </Point>
         <Point>
-          <X>420</X>
+          <X>485</X>
           <Y>259</Y>
         </Point>
       </RoutePoints>

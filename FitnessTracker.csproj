@@ -49,14 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity.cs" />
-    <Compile Include="ActivityForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ActivityForm.Designer.cs">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ActivityRecord.cs" />
+    <Compile Include="ActivityRecordUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActivityRecordUserControl.Designer.cs">
+      <DependentUpon>ActivityRecordUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActivityType.cs" />
     <Compile Include="Fitness_Tracker_DataSet.cs">
       <DependentUpon>Fitness_Tracker_DataSet.xsd</DependentUpon>
@@ -102,8 +101,8 @@
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="ActivityForm.resx">
-      <DependentUpon>ActivityForm.cs</DependentUpon>
+    <EmbeddedResource Include="ActivityRecordUserControl.resx">
+      <DependentUpon>ActivityRecordUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoalUserControl.resx">
       <DependentUpon>GoalUserControl.cs</DependentUpon>

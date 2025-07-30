@@ -126,11 +126,11 @@ namespace FitnessTracker
                     var relatedActivities = activitiesTable.Rows.Cast<DataRow>()
                         .Where(a =>
                             Convert.ToDateTime(a["ActivityDateTime"]).Date >= start.Date &&
-                            Convert.ToDateTime(a["ActivityDate"]).Date <= end.Date
+                            Convert.ToDateTime(a["ActivityDateTime"]).Date <= end.Date
                         );
 
-                    int totalBurned = relatedActivities.Sum(a => Convert.ToInt32(a["CaloriesBurned"]));
-                    double achieved = target > 0 ? (double)totalBurned / target * 100 : 0;
+                    int totalBurned = relatedActivities.Sum(a => Convert.ToInt32(a["BurnedCalories"]));
+                    double achieved = Math.Min((totalBurned / (double)target) * 100, 100);
                     string status = achieved >= 100 ? "Done" : "Not Yet";
 
                     return new
@@ -211,6 +211,8 @@ namespace FitnessTracker
             if(row != null)
             {
                 gta.DeleteGoal(goalId, Session.UserID);
+
+                MessageBox.Show("Delete Goal Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.ClearGoalForm();
                 this.LoadGoals();

@@ -91,6 +91,7 @@
             this.activityRecordPageBtn.TabIndex = 1;
             this.activityRecordPageBtn.Text = "ActivityRecord";
             this.activityRecordPageBtn.UseVisualStyleBackColor = true;
+            this.activityRecordPageBtn.Click += new System.EventHandler(this.activityRecordPageBtn_Click);
             // 
             // profilePageBtn
             // 
