@@ -136,6 +136,7 @@
             this.updateProfileBtn.TabIndex = 39;
             this.updateProfileBtn.Text = "Save";
             this.updateProfileBtn.UseVisualStyleBackColor = true;
+            this.updateProfileBtn.Click += new System.EventHandler(this.updateProfileBtn_Click_1);
             // 
             // txtHeight
             // 
