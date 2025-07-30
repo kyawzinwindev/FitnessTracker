@@ -115,36 +115,42 @@ namespace FitnessTracker
                 var activitiesAdapter = new ActivityRecordsTableAdapter();
 
                 var goalsTable = goalsAdapter.GetData();           
-                var activitiesTable = activitiesAdapter.GetData(); 
+                var activitiesTable = activitiesAdapter.GetData();
 
-                var displayData = goalsTable.Rows.Cast<DataRow>().Select(goalRow =>
-                {
-                    DateTime start = Convert.ToDateTime(goalRow["StartDate"]);
-                    DateTime end = Convert.ToDateTime(goalRow["EndDate"]);
-                    int target = Convert.ToInt32(goalRow["TargetCalories"]);
+                int currentUserID = Session.UserID;
 
-                    var relatedActivities = activitiesTable.Rows.Cast<DataRow>()
-                        .Where(a =>
-                            Convert.ToDateTime(a["ActivityDateTime"]).Date >= start.Date &&
-                            Convert.ToDateTime(a["ActivityDateTime"]).Date <= end.Date
-                        );
-
-                    int totalBurned = relatedActivities.Sum(a => Convert.ToInt32(a["BurnedCalories"]));
-                    double achieved = Math.Min((totalBurned / (double)target) * 100, 100);
-                    string status = achieved >= 100 ? "Done" : "Not Yet";
-
-                    return new
+                var displayData = goalsTable.Rows.Cast<DataRow>()
+                    .Where(goalRow => Convert.ToInt32(goalRow["UserID"]) == currentUserID)
+                    .Select(goalRow =>
                     {
-                        Title = goalRow["Title"].ToString(),
-                        Start = Convert.ToDateTime(goalRow["StartDate"]).Date,
-                        End = Convert.ToDateTime(goalRow["EndDate"]).Date,
-                        Target = target,
-                        Burned = totalBurned,
-                        Achieved = $"{achieved:F1}%",
-                        Status = status,
-                        ID = Convert.ToInt32(goalRow["GoalID"])
-                    };
-                }).ToList();
+                        DateTime start = Convert.ToDateTime(goalRow["StartDate"]);
+                        DateTime end = Convert.ToDateTime(goalRow["EndDate"]);
+                        int target = Convert.ToInt32(goalRow["TargetCalories"]);
+
+                        var relatedActivities = activitiesTable.Rows.Cast<DataRow>()
+                    .Where(a =>
+                        Convert.ToInt32(a["UserID"]) == currentUserID &&
+                        Convert.ToDateTime(a["ActivityDateTime"]).Date >= start.Date &&
+                        Convert.ToDateTime(a["ActivityDateTime"]).Date <= end.Date
+                    );
+
+                        int totalBurned = relatedActivities.Sum(a => Convert.ToInt32(a["BurnedCalories"]));
+                        double achieved = Math.Min((totalBurned / (double)target) * 100, 100);
+                        string status = achieved >= 100 ? "Done" : "Not Yet";
+
+                        return new
+                        {
+                            Title = goalRow["Title"].ToString(),
+                            Start = start.Date,
+                            End = end.Date,
+                            Target = target,
+                            Burned = totalBurned,
+                            Achieved = $"{achieved:F1}%",
+                            Status = status,
+                            ID = Convert.ToInt32(goalRow["GoalID"])
+                        };
+                    }).ToList();
+
 
                 dgvGoals.DataSource = displayData;
                 dgvGoals.Columns["ID"].Visible = false;
@@ -152,7 +158,7 @@ namespace FitnessTracker
                 dgvGoals.Columns["Start"].HeaderText = "Start Date";
                 dgvGoals.Columns["End"].HeaderText = "End Date";
                 dgvGoals.Columns["Target"].HeaderText = "Target Calories";
-                dgvGoals.Columns["Burned"].HeaderText = "Burned Calories";
+                dgvGoals.Columns["Burned"].HeaderText = "Current BurnedCalories";
                 dgvGoals.Columns["Achieved"].HeaderText = "Achieved %";
                 dgvGoals.Columns["Status"].HeaderText = "Status";
 

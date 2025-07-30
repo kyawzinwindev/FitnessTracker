@@ -147,25 +147,29 @@ namespace FitnessTracker
 
                 var activitiesTable = activitiesAdapter.GetData();
 
-                var displayData = activitiesTable.Rows.Cast<DataRow>().Select(activityRow =>
-                {
-                    DateTime time = Convert.ToDateTime(activityRow["ActivityDateTime"]);
-                    DateTime date = Convert.ToDateTime(activityRow["ActivityDateTime"]);
+                int currentUserID = Session.UserID;
 
-                    return new
+                var displayData = activitiesTable.Rows.Cast<DataRow>()
+                    .Where(activityRow => Convert.ToInt32(activityRow["UserID"]) == currentUserID)
+                    .Select(activityRow =>
                     {
-                        Activity = activityRow["ActivityType"].ToString(),
-                        BurnedCalories = Convert.ToInt32(activityRow["BurnedCalories"]),
-                        Time = time,
-                        Date = date,
-                        Metric1 = Convert.ToDecimal(activityRow["Metric1"]),
-                        Metric2 = Convert.ToDecimal(activityRow["Metric2"]),
-                        Metric3 = Convert.ToDecimal(activityRow["Metric3"]),
-                        CalculateBurnedCalories = Convert.ToDecimal(activityRow["BurnedCalories"]),
-                        ActivityDateTime = Convert.ToDateTime(activityRow["ActivityDateTime"]),
-                        ID = Convert.ToInt32(activityRow["ActivityRecordID"])
-                    };
-                }).ToList();
+                        DateTime time = Convert.ToDateTime(activityRow["ActivityDateTime"]);
+                        DateTime date = time.Date;
+
+                        return new
+                        {
+                            Activity = activityRow["ActivityType"].ToString(),
+                            BurnedCalories = Convert.ToInt32(activityRow["BurnedCalories"]),
+                            Time = time,
+                            Date = date,
+                            Metric1 = Convert.ToDecimal(activityRow["Metric1"]),
+                            Metric2 = Convert.ToDecimal(activityRow["Metric2"]),
+                            Metric3 = Convert.ToDecimal(activityRow["Metric3"]),
+                            ActivityDateTime = time,
+                            ID = Convert.ToInt32(activityRow["ActivityRecordID"])
+                        };
+                    }).ToList();
+
 
                 dgvActivityRecords.DataSource = displayData;
                 dgvActivityRecords.Columns["ID"].Visible = false;
@@ -175,7 +179,7 @@ namespace FitnessTracker
                 dgvActivityRecords.Columns["ActivityDateTime"].Visible = false;
 
                 dgvActivityRecords.Columns["Activity"].HeaderText = "Activity Name";
-                dgvActivityRecords.Columns["CalculateBurnedCalories"].HeaderText = "Burned Calories";
+                dgvActivityRecords.Columns["BurnedCalories"].HeaderText = "Burned Calories";
                 dgvActivityRecords.Columns["Time"].HeaderText = "Activity Time";
                 dgvActivityRecords.Columns["Date"].HeaderText = "Activity Date";
 
