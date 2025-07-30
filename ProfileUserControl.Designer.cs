@@ -32,6 +32,7 @@
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.updateProfileBtn = new System.Windows.Forms.Button();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtWeight = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.updateProfileBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -128,6 +128,15 @@
             this.panel1.Size = new System.Drawing.Size(841, 423);
             this.panel1.TabIndex = 2;
             // 
+            // updateProfileBtn
+            // 
+            this.updateProfileBtn.Location = new System.Drawing.Point(323, 351);
+            this.updateProfileBtn.Name = "updateProfileBtn";
+            this.updateProfileBtn.Size = new System.Drawing.Size(120, 23);
+            this.updateProfileBtn.TabIndex = 39;
+            this.updateProfileBtn.Text = "Save";
+            this.updateProfileBtn.UseVisualStyleBackColor = true;
+            // 
             // txtHeight
             // 
             this.txtHeight.Location = new System.Drawing.Point(431, 293);
@@ -140,9 +149,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(435, 266);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Height";
+            this.label8.Text = "Height ( cm )";
             // 
             // txtWeight
             // 
@@ -156,9 +165,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(435, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Weight";
+            this.label7.Text = "Weight ( kg )";
             // 
             // groupBox1
             // 
@@ -284,15 +293,6 @@
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 22;
             this.label2.Text = "Fullname";
-            // 
-            // updateProfileBtn
-            // 
-            this.updateProfileBtn.Location = new System.Drawing.Point(323, 351);
-            this.updateProfileBtn.Name = "updateProfileBtn";
-            this.updateProfileBtn.Size = new System.Drawing.Size(120, 23);
-            this.updateProfileBtn.TabIndex = 39;
-            this.updateProfileBtn.Text = "Save";
-            this.updateProfileBtn.UseVisualStyleBackColor = true;
             // 
             // ProfileUserControl
             // 
