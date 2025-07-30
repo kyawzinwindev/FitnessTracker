@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FitnessTracker.Fitness_Tracker_DataSetTableAdapters;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,6 +97,19 @@ namespace FitnessTracker
             {
                 height = value;
             }
+        }
+
+        public static decimal TotalBurnedCalories()
+        {
+            var activitiesAdapter = new ActivityRecordsTableAdapter();
+            var activitiesTable = activitiesAdapter.GetData();
+
+            int currentUserID = Session.UserID;
+
+            return  activitiesTable.Rows.Cast<DataRow>()
+                .Where(row => Convert.ToInt32(row["UserID"]) == currentUserID)
+                .Sum(row => Convert.ToInt32(row["BurnedCalories"]));
+
         }
 
     }

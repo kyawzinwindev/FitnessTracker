@@ -35,9 +35,9 @@
             this.profilePageBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.logoutBtn = new System.Windows.Forms.Button();
-            this.todayDateLabel = new System.Windows.Forms.Label();
+            this.totalCaloriesBurnedlbl = new System.Windows.Forms.Label();
             this.welcomeNameLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.todayDateLabel = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.tableMain.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -50,7 +50,7 @@
             this.tableMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableMain.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableMain.Controls.Add(this.panel1, 0, 0);
-            this.tableMain.Controls.Add(this.label1, 0, 3);
+            this.tableMain.Controls.Add(this.todayDateLabel, 0, 3);
             this.tableMain.Controls.Add(this.panelMain, 0, 2);
             this.tableMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableMain.Location = new System.Drawing.Point(0, 0);
@@ -106,7 +106,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.logoutBtn);
-            this.panel1.Controls.Add(this.todayDateLabel);
+            this.panel1.Controls.Add(this.totalCaloriesBurnedlbl);
             this.panel1.Controls.Add(this.welcomeNameLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -127,14 +127,15 @@
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
-            // todayDateLabel
+            // totalCaloriesBurnedlbl
             // 
-            this.todayDateLabel.AutoSize = true;
-            this.todayDateLabel.Location = new System.Drawing.Point(11, 42);
-            this.todayDateLabel.Name = "todayDateLabel";
-            this.todayDateLabel.Size = new System.Drawing.Size(35, 13);
-            this.todayDateLabel.TabIndex = 1;
-            this.todayDateLabel.Text = "label1";
+            this.totalCaloriesBurnedlbl.AutoSize = true;
+            this.totalCaloriesBurnedlbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCaloriesBurnedlbl.Location = new System.Drawing.Point(11, 42);
+            this.totalCaloriesBurnedlbl.Name = "totalCaloriesBurnedlbl";
+            this.totalCaloriesBurnedlbl.Size = new System.Drawing.Size(48, 20);
+            this.totalCaloriesBurnedlbl.TabIndex = 1;
+            this.totalCaloriesBurnedlbl.Text = "label1";
             // 
             // welcomeNameLabel
             // 
@@ -146,16 +147,16 @@
             this.welcomeNameLabel.TabIndex = 0;
             this.welcomeNameLabel.Text = "label1";
             // 
-            // label1
+            // todayDateLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 436);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 14);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Small steps everyday lead to big results.";
+            this.todayDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.todayDateLabel.AutoSize = true;
+            this.todayDateLabel.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todayDateLabel.Location = new System.Drawing.Point(3, 436);
+            this.todayDateLabel.Name = "todayDateLabel";
+            this.todayDateLabel.Size = new System.Drawing.Size(39, 14);
+            this.todayDateLabel.TabIndex = 3;
+            this.todayDateLabel.Text = "label1";
             // 
             // panelMain
             // 
@@ -190,13 +191,13 @@
         private System.Windows.Forms.TableLayoutPanel tableMain;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button logoutBtn;
-        private System.Windows.Forms.Label todayDateLabel;
+        private System.Windows.Forms.Label totalCaloriesBurnedlbl;
         private System.Windows.Forms.Label welcomeNameLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button goalPageBtn;
         private System.Windows.Forms.Button activityRecordPageBtn;
         private System.Windows.Forms.Button profilePageBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label todayDateLabel;
         private System.Windows.Forms.Panel panelMain;
     }
 }

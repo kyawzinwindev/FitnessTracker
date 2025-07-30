@@ -21,7 +21,9 @@ namespace FitnessTracker
         {
             var username = Session.UserFullName;
             welcomeNameLabel.Text = "Welcome, " + username + "!";
-            todayDateLabel.Text = "Today is: " + DateTime.Now.ToString("D");
+
+            todayDateLabel.Text = "Today's Date: " + DateTime.Now.ToString("dd/MM/yyyy");
+            totalCaloriesBurnedlbl.Text = "Your Total Calories Burned is: " + User.TotalBurnedCalories();
 
             this.goalPageBtn_Click(sender, e);
         }
