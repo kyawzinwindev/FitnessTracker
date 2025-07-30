@@ -32,6 +32,7 @@ namespace FitnessTracker
             
         }
 
+        //Login Function and handle the failed attempts and lockout
         private void loginSummitBtn_Click(object sender, EventArgs e)
         {
             if (isLockedOut)
