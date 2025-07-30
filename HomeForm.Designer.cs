@@ -117,7 +117,7 @@
             // logoutBtn
             // 
             this.logoutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.logoutBtn.BackColor = System.Drawing.Color.Red;
             this.logoutBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.logoutBtn.Location = new System.Drawing.Point(710, 22);
             this.logoutBtn.Name = "logoutBtn";
