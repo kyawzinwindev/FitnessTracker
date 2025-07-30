@@ -130,13 +130,12 @@
             // 
             // updateProfileBtn
             // 
-            this.updateProfileBtn.Location = new System.Drawing.Point(323, 351);
+            this.updateProfileBtn.Location = new System.Drawing.Point(347, 358);
             this.updateProfileBtn.Name = "updateProfileBtn";
             this.updateProfileBtn.Size = new System.Drawing.Size(120, 23);
-            this.updateProfileBtn.TabIndex = 39;
+            this.updateProfileBtn.TabIndex = 0;
             this.updateProfileBtn.Text = "Save";
-            this.updateProfileBtn.UseVisualStyleBackColor = true;
-            this.updateProfileBtn.Click += new System.EventHandler(this.updateProfileBtn_Click_1);
+            this.updateProfileBtn.Click += new System.EventHandler(this.updateProfileBtn_Click);
             // 
             // txtHeight
             // 

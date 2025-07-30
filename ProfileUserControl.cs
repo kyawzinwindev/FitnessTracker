@@ -188,5 +188,6 @@ namespace FitnessTracker
                 return radioOther.Checked = true;
             }
         }
+
     }
 }
