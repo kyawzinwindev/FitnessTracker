@@ -56,5 +56,14 @@ namespace FitnessTracker
             activityRecordUserControl.comboActivityType_SelectedIndexChanged(sender, e);
             activityRecordUserControl.LoadActivityRecords();
         }
+
+        private void profilePageBtn_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+            ProfileUserControl profileUserControl = new ProfileUserControl();
+            profileUserControl.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(profileUserControl);
+            profileUserControl.LoadUserProfile();
+        }
     }
 }

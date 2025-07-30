@@ -101,6 +101,7 @@
             this.profilePageBtn.TabIndex = 2;
             this.profilePageBtn.Text = "Profile";
             this.profilePageBtn.UseVisualStyleBackColor = true;
+            this.profilePageBtn.Click += new System.EventHandler(this.profilePageBtn_Click);
             // 
             // panel1
             // 
