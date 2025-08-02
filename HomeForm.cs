@@ -12,9 +12,15 @@ namespace FitnessTracker
 {
     public partial class HomeForm : Form
     {
+        private ActivityRecordUserControl activityRecordUserControl;
         public HomeForm()
         {
             InitializeComponent();
+
+            activityRecordUserControl = new ActivityRecordUserControl();
+            activityRecordUserControl.ActivitySuccess += OnActivitySuccess;
+
+            this.Controls.Add(activityRecordUserControl);
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
@@ -51,7 +57,7 @@ namespace FitnessTracker
         private void activityRecordPageBtn_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            ActivityRecordUserControl activityRecordUserControl = new ActivityRecordUserControl();
+            
             activityRecordUserControl.Dock = DockStyle.Fill;
             panelMain.Controls.Add(activityRecordUserControl);
             activityRecordUserControl.LoadComboBoxData();
@@ -66,6 +72,11 @@ namespace FitnessTracker
             profileUserControl.Dock = DockStyle.Fill;
             panelMain.Controls.Add(profileUserControl);
             profileUserControl.LoadUserProfile();
+        }
+
+        private void OnActivitySuccess(object sender, EventArgs e)
+        {
+            totalCaloriesBurnedlbl.Text = "Your Total Calories Burned is: " + User.TotalBurnedCalories();
         }
     }
 }

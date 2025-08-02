@@ -15,6 +15,8 @@ namespace FitnessTracker
     public partial class ActivityRecordUserControl : UserControl
     {
         Fitness_Tracker_DataSetTableAdapters.ActivityRecordsTableAdapter ata = new Fitness_Tracker_DataSetTableAdapters.ActivityRecordsTableAdapter();
+       
+        public event EventHandler ActivitySuccess;
 
         public ActivityRecordUserControl()
         {
@@ -69,6 +71,7 @@ namespace FitnessTracker
                         if (data > 0)
                         {
                             decimal burnedCalories = CalculateBurnedCalories(newActivity.ActivityType, newActivity.Metric1, newActivity.Metric2, newActivity.Metric3);
+                            ActivitySuccess?.Invoke(this, EventArgs.Empty);
                             MessageBox.Show($"Create Activity Successful! Burned Calories: {burnedCalories}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.ClearActivityRecordForm();
@@ -104,6 +107,7 @@ namespace FitnessTracker
 
                         if (data > 0)
                         {
+                            ActivitySuccess?.Invoke(this, EventArgs.Empty);
                             MessageBox.Show("Update ActivityRecord Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.ClearActivityRecordForm();
                             this.LoadActivityRecords();
